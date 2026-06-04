@@ -1,25 +1,43 @@
 feature,importance_gain
-rating_numeric,22020198.787384033
-EBIT / Interest Expense (x),9034036.263916016
-log_assets,8087255.830255508
-age_yrs,7981700.792980194
-rating_is_ig,5955802.839813232
-time_to_maturity_yrs,5669949.139129639
-convexity,5230486.448535919
-debt_to_equity,4575026.981658936
-log_amt_outstanding,3507408.4374990463
-EBITDA Margin,3159079.301170349
-net_debt_to_ebitda,2935642.2942504883
-total_debt_to_assets,2449517.2238998413
-Current Ratio (x),1599637.8579273224
-Total Debt / EBITDA (x),1425344.572154045
-modified_duration,973297.6081066132
-cash_to_debt,810472.0596466064
-Quick Ratio (x),422751.6212005615
-fcf_to_debt,363416.7282612324
-cfo_to_debt,317594.49786376953
-EBITDA / Interest Expense (x),44398.29244995117
-seniority_senior_unsecured,0.0
+rating_numeric,17540160.73742485
+z_spread_mid_vol_12m,11278717.41486995
+mid_price_vol_6m,3945945.17092824
+ytm_mid_chg_12m,3363306.315885715
+modified_duration,3144543.075637698
+time_to_maturity_yrs,2370577.387108594
+Current Ratio (x),1940742.9099423736
+z_spread_mid_vol_6m,1627789.4094956517
+convexity,1600557.474134475
+z_spread_mid_chg_12m,1510903.197934404
+z_spread_mid_chg_1m,1326430.77412346
+log_amt_outstanding,1294784.5398624395
+rating_is_ig,1042157.642490387
+log_assets,972165.0006537437
+mid_price_chg_3m,924155.8516697735
+net_debt_to_ebitda,881252.637075901
+age_yrs,813686.6867744923
+z_spread_mid_chg_3m,751798.0142010748
+ytm_mid_chg_3m,709904.7136683166
+ytm_mid_chg_1m,703046.0721828192
+mid_price_chg_1m,683296.0338030607
+total_debt_to_assets,535147.8099873066
+EBIT / Interest Expense (x),427994.9350422919
+cfo_to_debt,363627.87912392616
+debt_to_equity,305278.11388397217
+oas_mid_chg_12m,275073.43202572316
+cfo_to_revenue,266469.8120844364
+Return on Assets,235121.0331184864
+fcf_to_debt,172824.94459950924
+oas_mid_chg_1m,146887.1331258677
+net_debt_to_assets,136642.2441215515
+Total Debt / Total Capital (%),125380.73105728626
+Net Income Margin,92889.28764051199
+oas_mid_chg_3m,64465.53827250004
+Quick Ratio (x),45351.20987355709
+ebit_margin_calc,45329.84000816941
+EBIT Margin,31890.809567451477
+cash_to_debt,24328.12994813919
+seniority_senior_unsecured,16872.46231532097
 hy_oas,0.0
 ig_oas,0.0
 treasury_10y,0.0

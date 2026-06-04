@@ -1,0 +1,467 @@
+﻿SPGTable,,,,,,,,,,,
+Issuer Name,Instrument Item ID,MI KEY,CUSIP,Description,"Callable?
+Yes/No","Next Call Date
+MM/dd/yyyy","First Callable Payment Date
+MM/dd/yyyy",Seniority Level,Debt Type Detail,"Maturity Date
+MM/dd/yyyy",Maturity Type
+SPT_ISSUER_NAME,SPT_INSTRUMENT_ITEM_ID,SPT_MI_KEY,SPT_CUSIP,SPT_DESCRIPTION,SPT_CALLABLE,SPT_NEXT_CALL_DATE,SPT_FIRST_CALLABLE_PAYMENT_DATE,SPT_SENIORITY_LEVEL,SPT_DEBT_TYPE_DETAIL,SPT_MAT_DATE,SPT_MATURITY_TYPE
+,,,,,EOD Close Price,EOD Close Price,EOD Close Price,EOD Close Price,EOD Close Price,EOD Close Price,EOD Close Price
+,,,,,11/28/2025,10/31/2025,9/30/2025,8/29/2025,7/31/2025,5/30/2025,4/30/2025
+AEP Texas Inc.,SPS1783388206,4056935,00108WAQ3,AETEXA 5.25 05/15/2052 FIX USD Corporate,Yes,11/15/2051,11/15/2051,Senior Unsecured,Bond,5/15/2052,Fixed Maturity
+"AEP Transmission Company, LLC",SPS1675968448,4341449,00115AAN9,AEPTRA 2.75 08/15/2051 FIX USD Corporate,Yes,2/15/2051,2/15/2051,Senior Unsecured,Bond,8/15/2051,Fixed Maturity
+Alcoa Nederland Holding B.V,SPS564713640,20065917,013822AD3,ALCONED 05/15/2028 FIX USD Corporate,Yes,,"45,061.00000",Senior Unsecured,Bond,"46,888.00000",Fixed Maturity
+Alltel Corporation,SPS14070091,4019044,020039AJ2,ALTEL 6.8 05/01/2029 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"47,239.00000",Fixed Maturity
+Ally Financial Inc.,SPS216192058,102864,02006DR52,ALLYFI 7.1 12/15/2028 FIX USD Corporate,Yes,"46,188.00000","45,458.00000",Senior Unsecured,Bond,"47,102.00000",Fixed Maturity
+Ameren Corporation,SPS14080441,4007308,171794AF7,AEE 9.375 10/15/2029 FIX USD Corporate,Yes,,,Senior Secured,Bond,10/15/2029,Fixed Maturity
+"American Homes 4 Rent, L.P.",SPS1869214330,4413987,02666TAG2,AMERHOAL 5.5 02/01/2034 FIX USD Corporate,Yes,"48,884.00000","48,884.00000",Senior Unsecured,Bond,"48,976.00000",Fixed Maturity
+Ameritech Capital Funding Corporation,SPS14047511,4150236,030955AJ7,SBC-AmtechCapF 6.875 10/15/2027 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,675.00000",Fixed Maturity
+Anadarko Petroleum Corporation,SPS14036609,4010194,032511AJ6,APC 7.73 09/15/2096 FIX USD Corporate,No,,,Senior Unsecured,Bond,"71,848.00000",Fixed Maturity
+Anadarko Petroleum Corporation,SPS14037944,4010194,032511AK3,APC 7.25 11/15/2096 FIX USD Corporate,No,,,Senior Unsecured,Bond,"71,909.00000",Fixed Maturity
+Anadarko Petroleum Corporation,SPS14049077,4010194,032511AL1,APC 7.0 11/15/2027 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,706.00000",Fixed Maturity
+Anadarko Petroleum Corporation,SPS14050789,4010194,032511AM9,APC 6.625 01/15/2028 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,767.00000",Fixed Maturity
+Anadarko Petroleum Corporation,SPS14067687,4010194,032511AN7,APC 7.2 03/15/2029 FIX USD Corporate,No,,,Senior Unsecured,Bond,"47,192.00000",Fixed Maturity
+Anadarko Petroleum Corporation,SPS151354409,4010194,032511AZ0,APC 10/10/2036 FIX USD Corporate 144A,Yes,,10/10/2009,Senior Unsecured,Bond,10/10/2036,Fixed Maturity
+APA Corporation,SPS1912144050,4010203,U0379QAE2,APACOR 7.75 12/15/2029 FIX USD Corporate RegS,No,,,Senior Unsecured,Bond,"47,467.00000",Fixed Maturity
+APA Corporation,SPS1912144055,4010203,U0379QAK8,APACOR 4.75 04/15/2043 FIX USD Corporate RegS,Yes,10/15/2042,10/15/2042,Senior Unsecured,Bond,4/15/2043,Fixed Maturity
+APA Corporation,SPS1912144059,4010203,U0379QAP7,APACOR 7.63 11/01/2096 FIX USD Corporate RegS,No,,,Senior Unsecured,Bond,11/1/2096,Fixed Maturity
+Apollo Debt Solutions BDC,SPS1916558713,27739734,03770DAF0,APOLDEB 6.55 03/15/2032 FIX USD Corporate,Yes,1/15/2032,1/15/2032,Senior Unsecured,Bond,3/15/2032,Fixed Maturity
+Apollo Debt Solutions BDC,SPS1972936612,27739734,03770DAH6,SR 144A NT5.2%28,Yes,11/8/2028,,Senior Unsecured,,12/8/2028,
+Apollo Debt Solutions BDC,SPS1974799806,27739734,03770DAK9,APOLDEB 5.875 08/30/2030 FIX USD Corporate,Yes,7/30/2030,7/30/2030,Senior Unsecured,Bond,8/30/2030,Fixed Maturity
+Appalachian Power Company,SPS660100799,4056972,037735CY1,AEP-Appalachian 3.7 05/01/2050 FIX USD Corporate,Yes,"54,728.00000","54,728.00000",Senior Unsecured,Bond,"54,909.00000",Fixed Maturity
+"Bath & Body Works, Inc.",SPS14132358,4069317,532716AJ6,BATHB 6.95 03/01/2033 FIX USD Corporate 144A,Yes,,,Senior Unsecured,Bond,"48,639.00000",Fixed Maturity
+"Bath & Body Works, Inc.",SPS14140320,4069317,532716AK3,BATHB 6.95 03/01/2033 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"48,639.00000",Fixed Maturity
+"Bath & Body Works, Inc.",SPS64386194,4069317,U53313AA7,BATHB 6.95 03/01/2033 FIX USD Corporate RegS,Yes,,,Senior Unsecured,Bond,"48,639.00000",Fixed Maturity
+"BellSouth Telecommunications, LLC",SPS14027259,4004438,079867AP2,BELLTEL 7.0 12/01/2095 FIX USD Corporate,No,,,Senior Unsecured,Bond,"71,559.00000",Fixed Maturity
+"BellSouth Telecommunications, LLC",SPS14027520,4004438,079867AS6,BELLTEL 6.65 12/15/2095 VAR USD Corporate,No,,,Senior Unsecured,Bond,"71,573.00000",Fixed Maturity
+"BellSouth, LLC",SPS14037949,4041154,079857AC2,BELLLLC 6.04 11/15/2026 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,341.00000",Fixed Maturity
+"BellSouth, LLC",SPS14045528,4041154,079857AF5,BELLLLC 7.12 07/15/2097 FIX USD Corporate RegS,Yes,,,Senior Unsecured,Bond,"72,151.00000",Fixed Maturity
+"BellSouth, LLC",SPS14081146,4041154,079857AH1,BELLLLC 7.875 02/15/2030 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"47,529.00000",Fixed Maturity
+"BellSouth, LLC",SPS14106681,4041154,079860AD4,BELLLLC 6.875 10/15/2031 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"48,136.00000",Fixed Maturity
+Belo Corp.,SPS14043892,4121666,080555AE5,TEGNINC 7.75 06/01/2027 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"46,539.00000",Fixed Maturity
+Belo Corp.,SPS14046964,4121666,080555AF2,BILLO 7.25 09/15/2027 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"46,645.00000",Fixed Maturity
+Blackstone Private Credit Fund,SPS1780659540,24801559,09261HA#4,BLACPRI 05/03/2027 FIX USD Corporate RegS,No,,,Senior Unsecured,Bond,5/3/2027,Fixed Maturity
+Blackstone Private Credit Fund,SPS1803440694,24801559,09261HB*7,BLACPRI 10/11/2027 FIX USD Corporate RegS,No,,,Senior Unsecured,Bond,10/11/2027,Fixed Maturity
+Blue Owl Credit Income Corp.,SPS1879069869,25867257,69120VBB6,BLUEOWAC 7.95 06/13/2028 FIX USD Corporate,Yes,"46,886.00000","46,886.00000",Senior Unsecured,Bond,"46,917.00000",Fixed Maturity
+Blue Owl Finance LLC,SPS1837977662,29164958,U0942JAE6,BLUEOW 7.397 05/26/2028 FIX USD Corporate RegS,No,,,Senior Unsecured,Bond,"46,899.00000",Fixed Maturity
+Blue Owl Finance LLC,SPS1837977799,29164958,09581JAK2,BLUEOW 7.397 05/26/2028 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,899.00000",Fixed Maturity
+Blue Owl Finance LLC,SPS1837977804,29164958,09581JAJ5,BLUEOW 7.397 05/26/2028 FIX USD Corporate 144A,No,,,Senior Unsecured,Bond,"46,899.00000",Fixed Maturity
+Boston Gas Company,SPS1848145517,4057111,100743AN3,KSE-BOGC 6.119 07/20/2053 FIX USD Corporate 144A,Yes,"55,904.00000","55,904.00000",Senior Unsecured,Bond,"56,085.00000",Fixed Maturity
+Boston Gas Company,SPS1848226543,4057111,U0568KAE6,KSE-BOGC 6.119 07/20/2053 FIX USD Corporate RegS,Yes,"55,904.00000","55,904.00000",Senior Unsecured,Bond,"56,085.00000",Fixed Maturity
+Boston Properties Limited Partnership,SPS706230363,4064347,10112RBE3,BPLP 2.55 04/01/2032 FIX USD Corporate,Yes,"48,214.00000","48,214.00000",Senior Unsecured,Bond,"48,305.00000",Fixed Maturity
+"Brighthouse Financial, Inc.",SPS434448530,6588911,10922NAB9,BRIGFIN 3.7 06/22/2027 FIX USD Corporate,Yes,"46,468.00000","46,468.00000",Senior Unsecured,Bond,"46,560.00000",Fixed Maturity
+"Brighthouse Holdings, LLC",SPS434813760,6592953,U6226CAA3,PERP -A REGS NT,Yes,7/27/2037,,Senior Unsecured,Note,,
+Cars.com Inc.,SPS693089646,4206401,14575EAB1,CARSINC 6.375 11/01/2028 FIX USD Corporate,No,,,Senior Unsecured,Bond,11/1/2028,Fixed Maturity
+CenterPoint Energy Resources Corp.,SPS117893209,4057141,15189WAF7,CNP-EnRes 01/15/2041 FIX USD Corporate 144A,Yes,,7/15/2040,Senior Unsecured,Bond,1/15/2041,Fixed Maturity
+CenterPoint Energy Resources Corp.,SPS118410020,4057141,U14088AC9,CNP-EnRes 01/15/2041 FIX USD Corporate RegS,Yes,,7/15/2040,Senior Unsecured,Bond,1/15/2041,Fixed Maturity
+"CenterPoint Energy, Inc.",SPS632958506,4074390,15189TAX5,CNP 2.95 03/01/2030 FIX USD Corporate,Yes,"47,453.00000","47,453.00000",Senior Unsecured,Bond,"47,543.00000",Fixed Maturity
+"CenterPoint Energy, Inc.",SPS632958507,4074390,15189TAY3,CNP 3.7 09/01/2049 FIX USD Corporate,Yes,"54,483.00000","54,483.00000",Senior Unsecured,Bond,"54,667.00000",Fixed Maturity
+"Charter Communications Operating, LLC",SPS1774063860,4137131,161175CJ1,CHTR-Operating 4.4 04/01/2033 FIX USD Corporate,Yes,"48,580.00000","48,580.00000",Senior Secured,Bond,"48,670.00000",Fixed Maturity
+"Charter Communications Operating, LLC",SPS1774063862,4137131,161175CL6,CHTR-Operating 5.5 04/01/2063 FIX USD Corporate,Yes,"59,445.00000","59,445.00000",Senior Secured,Bond,"59,627.00000",Fixed Maturity
+"Charter Communications Operating, LLC",SPS306470299,4137131,U16109AJ6,CCOSA 10/23/2055 FIX USD Corporate RegS,Yes,,4/23/2055,Senior Secured,Bond,10/23/2055,Fixed Maturity
+"Cheniere Energy Partners, L.P.",SPS636308389,4149886,16411QAF8,CHENENE 4.5 10/01/2029 FIX USD Corporate,No,,,Senior Unsecured,Bond,10/1/2029,Fixed Maturity
+"Cheniere Energy, Inc.",SPS1987606379,4100855,16411RAS8,CEIC 07/30/2056 FIX USD Corporate,No,,,Senior Unsecured,Bond,7/30/2056,Fixed Maturity
+"Cheniere Energy, Inc.",SPS1987606550,4100855,16411RAR0,CEIC 07/30/2036 FIX USD Corporate,No,,,Senior Unsecured,Bond,7/30/2036,Fixed Maturity
+Churchill Downs Incorporated,SPS546426348,4150067,171484AF5,CHDOI 4.75 01/15/2028 FIX USD Corporate,Yes,7/1/2026,1/15/2023,Senior Unsecured,Bond,1/15/2028,Fixed Maturity
+Cincinnati Financial Corporation,SPS14056539,103262,172062AC5,CINF 6.9 05/15/2028 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,888.00000",Fixed Maturity
+Cincinnati Financial Corporation,SPS14177198,103262,172062AF8,CINF 6.92 05/15/2028 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,888.00000",Fixed Maturity
+Cincinnati Financial Corporation,SPS64353105,103262,U17150AA8,CINF 6.125 11/01/2034 FIX USD Corporate RegS,Yes,,,Senior Unsecured,Bond,11/1/2034,Fixed Maturity
+Citigroup Inc.,SPS165288847,4041896,1730T3BB8,C 4.0 05/16/2036 VAR USD Corporate,Yes,"46,250.00000","44,332.00000",Senior Unsecured,Bond,"49,811.00000",Fixed Maturity
+Citigroup Inc.,SPS1764851411,4041896,17327CAQ6,C 3.057 01/25/2033 FLT USD Corporate,Yes,"48,238.00000","48,238.00000",Senior Unsecured,Bond,"48,604.00000",Fixed Maturity
+Citigroup Inc.,SPS1774231253,4041896,172967NN7,C 3.785 03/17/2033 FLT USD Corporate,Yes,"48,290.00000","48,290.00000",Senior Unsecured,Bond,"48,655.00000",Fixed Maturity
+Citigroup Inc.,SPS1783829058,4041896,172967NU1,C 4.91 05/24/2033 FLT USD Corporate,Yes,"48,358.00000","48,358.00000",Senior Unsecured,Bond,"48,723.00000",Fixed Maturity
+Citigroup Inc.,SPS1814836101,4041896,172967PA3,C 6.27 11/17/2033 FLT USD Corporate,Yes,"48,535.00000","48,535.00000",Senior Unsecured,Bond,"48,900.00000",Fixed Maturity
+Citigroup Inc.,SPS1940002399,4041896,17292GMQ5,C 05/29/2046 FIX USD Corporate,No,,,Senior Unsecured,Bond,5/29/2046,Fixed Maturity
+Citigroup Inc.,SPS1955139175,4041896,U17408NC2,C 5.3 08/05/2036 FIX USD Corporate RegS,No,,,Senior Unsecured,Bond,8/5/2036,Fixed Maturity
+Citigroup Inc.,SPS1956598824,4041896,172967QE4,C 6.0 08/28/2045 FIX USD Corporate,No,,,Senior Unsecured,Bond,8/28/2045,Fixed Maturity
+Citigroup Inc.,SPS660463768,4041896,172967MP3,C 4.412 03/31/2031 FLT USD Corporate,Yes,"47,573.00000","47,573.00000",Senior Unsecured,Bond,"47,938.00000",Fixed Maturity
+Citigroup Inc.,SPS712751877,4041896,17290AHK9,C 6.0 06/16/2045 FIX USD Corporate,Yes,"46,920.00000","46,920.00000",Senior Unsecured,Bond,6/16/2045,Fixed Maturity
+CNX Resources Corporation,SPS604712397,4072680,12653CAD0,CNXRES 03/14/2027 FIX USD Corporate,Yes,,3/14/2022,Senior Unsecured,Bond,3/14/2027,Fixed Maturity
+CNX Resources Corporation,SPS604712400,4072680,12653CAE8,CNXRES 7.25 03/15/2027 FIX USD Corporate,No,,,Senior Unsecured,Bond,3/15/2027,Fixed Maturity
+Colonial Gas Company,SPS182566197,4057114,195674J@6,KSE-BOGC 03/15/2042 FIX USD Corporate RegS,No,,,Senior Unsecured,Bond,3/15/2042,Fixed Maturity
+"Colorado Interstate Gas Company, L.L.C.",SPS14044297,4057158,196522AE6,COLOINT 6.85 06/15/2037 FIX USD Corporate,No,,,Senior Unsecured,Bond,"50,206.00000",Fixed Maturity
+Connecticut Natural Gas Corporation,SPS14548092,4059402,20765QAH8,EAS-CTNatGas 5.63 09/15/2035 FIX USD Corporate 144A,No,,,Senior Unsecured,Bond,"49,567.00000",Fixed Maturity
+Connecticut Natural Gas Corporation,SPS37846246,4059402,20765QAK1,EAS-CTNatGas 6.66 10/15/2037 FIX USD Corporate 144A,No,,,Senior Unsecured,Bond,"50,328.00000",Fixed Maturity
+"Continental Resources, Inc.",SPS263811432,4120318,212015AQ4,CONRES 4.9 06/01/2044 FIX USD Corporate,Yes,"52,566.00000","52,566.00000",Senior Unsecured,Bond,"52,749.00000",Fixed Maturity
+"Corebridge Financial, Inc.",SPS1776484759,102701,U20256AF7,COREFIN 4.4 04/05/2052 FIX USD Corporate RegS,Yes,"55,431.00000","55,431.00000",Senior Unsecured,Bond,"55,614.00000",Fixed Maturity
+"Corebridge Financial, Inc.",SPS1776484760,102701,21871XAL3,COREFIN 4.4 04/05/2052 FIX USD Corporate 144A,Yes,"55,431.00000","55,431.00000",Senior Unsecured,Bond,"55,614.00000",Fixed Maturity
+"Corebridge Financial, Inc.",SPS1776484761,102701,U20256AE0,COREFIN 4.35 04/05/2042 FIX USD Corporate RegS,Yes,"51,779.00000","51,779.00000",Senior Unsecured,Bond,"51,961.00000",Fixed Maturity
+"Corebridge Financial, Inc.",SPS1776486439,102701,21871XAJ8,COREFIN 4.35 04/05/2042 FIX USD Corporate 144A,Yes,"51,779.00000","51,779.00000",Senior Unsecured,Bond,"51,961.00000",Fixed Maturity
+"Cox Communications, Inc.",SPS14052038,4024830,872241AB0,COX-CommInc 6.53 02/01/2028 FIX USD Corporate,Yes,"46,203.00000","39,479.00000",Senior Unsecured,Bond,"46,784.00000",Fixed Maturity
+CSX Corporation,SPS100451023,4004350,126408GR8,CSX 04/30/2040 FIX USD Corporate 144A,Yes,,3/24/2010,Senior Unsecured,Note,4/30/2040,Fixed Maturity
+CSX Corporation,SPS104608495,4004350,U12640AL9,CSX 6.22 04/30/2040 FIX USD Corporate RegS,Yes,,,Senior Unsecured,Bond,4/30/2040,Fixed Maturity
+CSX Corporation,SPS14042856,4004350,126408AU7,CSX 7.95 05/01/2027 FIX USD Corporate 144A,No,,,Senior Unsecured,Bond,"46,508.00000",Fixed Maturity
+CSX Corporation,SPS14042858,4004350,126408BB8,CSX 6.95 05/01/2027 FIX USD Corporate 144A,No,,,Senior Unsecured,Bond,5/1/2027,Fixed Maturity
+CSX Corporation,SPS14042859,4004350,126408BF9,CSX 8.3 05/01/2032 FIX USD Corporate 144A,Yes,,5/1/2007,Senior Unsecured,Bond,5/1/2032,Fixed Maturity
+CSX Corporation,SPS14050104,4004350,126408BM4,CSX 7.95 05/01/2027 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,508.00000",Fixed Maturity
+CSX Corporation,SPS1792811561,4004350,126408HV8,CSX 4.5 11/15/2052 FIX USD Corporate,Yes,"55,654.00000","55,654.00000",Senior Unsecured,Bond,"55,838.00000",Fixed Maturity
+CSX Corporation,SPS241269697,4004350,126408BP7,CSX 7.25 05/01/2027 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,508.00000",Fixed Maturity
+CSX Corporation,SPS32203759,4004350,126408BC6,CSX 6.95 05/01/2027 FIX USD Corporate 144A,No,,,Senior Unsecured,Bond,5/1/2027,Fixed Maturity
+CSX Corporation,SPS32203760,4004350,126408BE2,CSX 05/01/2027 FIX USD Corporate 144A,No,,,Senior Unsecured,Bond,5/1/2027,Fixed Maturity
+CSX Corporation,SPS64206363,4004350,126408BG7,CSX 8.3 05/01/2032 FIX USD Corporate 144A,Yes,,5/1/2007,Senior Unsecured,Bond,5/1/2032,Fixed Maturity
+CSX Corporation,SPS64219206,4004350,126408AY9,CSX 7.95 05/01/2027 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,508.00000",Fixed Maturity
+"Delhaize America, Inc.",SPS14096250,4054848,246688AB1,DELHIZ 9.0 04/15/2031 FIX USD Corporate 144A,Yes,,,Senior Unsecured,Bond,"47,953.00000",Fixed Maturity
+"Delhaize America, Inc.",SPS14109516,4054848,246688AF2,DELHIZ 9.0 04/15/2031 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"47,953.00000",Fixed Maturity
+"Delhaize America, Inc.",SPS64348525,4054848,U24627AB4,DELHIZ 9.0 04/15/2031 FIX USD Corporate RegS,Yes,,,Senior Unsecured,Bond,4/15/2031,Fixed Maturity
+Dell Inc.,SPS14552207,4047867,247025AE9,DELLN 7.1 04/15/2028 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"46,858.00000",Fixed Maturity
+Dell Inc.,SPS45117130,4047867,U24715AC5,DELLN 04/15/2038 FIX USD Corporate RegS,Yes,,,Senior Unsecured,Bond,4/15/2038,Fixed Maturity
+Discover Financial Services,SPS308170823,4096334,25472CBR9,DSF 4.0 03/15/2029 FIX USD Corporate,Yes,"47,102.00000","47,102.00000",Senior Unsecured,Bond,"47,192.00000",Fixed Maturity
+"Discovery Communications, LLC",SPS1948595357,4200085,25470DBU2,DSCOML 5.3 05/15/2049 FIX USD Corporate,Yes,"54,377.00000","54,377.00000",Senior Unsecured,Bond,5/15/2049,Fixed Maturity
+"Discovery Global Holdings, Inc.",SPS1948595592,29181597,55903VBW2,DISCGLO 5.05 03/15/2042 FIX USD Corporate,Yes,"51,759.00000","51,759.00000",Senior Unsecured,Bond,3/15/2042,Fixed Maturity
+"Dominion Energy, Inc.",SPS14037268,4001616,209615BQ5,DOMINEN 6.875 10/15/2026 FIX USD Corporate,Yes,,"39,005.00000",Senior Unsecured,Bond,"46,310.00000",Fixed Maturity
+"Dominion Energy, Inc.",SPS14049850,4001616,209615BS1,DOMINEN 6.8 12/15/2027 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"46,736.00000",Fixed Maturity
+Duke Energy Corporation,SPS1854810425,4121470,26441CCA1,DUKECRP 6.1 09/15/2053 FIX USD Corporate,Yes,"55,958.00000","55,958.00000",Senior Unsecured,Bond,"56,142.00000",Fixed Maturity
+"Duke Energy Florida, LLC",SPS14171999,4056998,341099BT5,DUKEENAA 6.75 02/01/2028 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"46,784.00000",Fixed Maturity
+"Duke Energy Florida, LLC",SPS32210158,4056998,341099BW8,DUKEENAA 6.75 02/01/2028 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"46,784.00000",Fixed Maturity
+"Duke Energy Indiana, LLC",SPS14551614,4062444,693627AY7,DUKEENAB 6.12 10/15/2035 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"49,597.00000",Fixed Maturity
+"Duke Energy Kentucky, Inc.",SPS26281773,4057103,906888AS1,DEK 6.2 03/10/2036 FIX USD Corporate 144A,Yes,,,Senior Unsecured,Bond,"49,744.00000",Fixed Maturity
+"Duke Energy Ohio, Inc.",SPS14057038,4057079,172070CG7,DUKENO 6.35 06/15/2038 FLT USD Corporate,Yes,6/15/2028,6/15/2003,Senior Unsecured,Bond,6/15/2038,Fixed Maturity
+"Duke Energy Ohio, Inc.",SPS14139774,4057079,172070CP7,DUKENO 5.4 06/15/2033 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"48,745.00000",Fixed Maturity
+"Duke Energy Ohio, Inc.",SPS14139775,4057079,172070CQ5,DUKENO 5.375 06/15/2033 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"48,745.00000",Fixed Maturity
+El Paso LLC,SPS227398570,4010586,U53248AP2,KINDERM 7.42 02/15/2037 FIX USD Corporate RegS,No,,,Senior Unsecured,Bond,"50,086.00000",Fixed Maturity
+El Paso LLC,SPS28714186,4010586,28336LBG3,KINDERM 7.42 02/15/2037 FIX USD Corporate 144A,No,,,Senior Unsecured,Bond,"50,086.00000",Fixed Maturity
+El Paso LLC,SPS28714188,4010586,28336LBA6,KINDERM 02/15/2027 FIX USD Corporate 144A,No,,,Senior Unsecured,Bond,2/15/2027,Fixed Maturity
+El Paso LLC,SPS28969902,4010586,28336LBB4,ELPASAL 6.7 02/15/2027 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,433.00000",Fixed Maturity
+El Paso LLC,SPS28969935,4010586,28336LBH1,KINDERM 7.42 02/15/2037 FIX USD Corporate,No,,,Senior Unsecured,Bond,"50,086.00000",Fixed Maturity
+El Paso LLC,SPS64358763,4010586,U53248AL1,KINDERM 02/15/2027 FIX USD Corporate RegS,No,,,Senior Unsecured,Bond,2/15/2027,Fixed Maturity
+"El Paso Natural Gas Company, L.L.C.",SPS14037911,4057159,283695BE3,ELPASBB 7.5 11/15/2026 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,341.00000",Fixed Maturity
+EPR Properties,SPS410248966,113645,26884UA@8,EPRPRO 4.56 08/22/2026 FIX USD Corporate RegS,No,,,Senior Unsecured,Bond,8/22/2026,Fixed Maturity
+EQT Corporation,SPS14035183,4004341,294549AE0,ETABL 7.75 07/15/2026 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,218.00000",Fixed Maturity
+Equifax Inc.,SPS14057890,4040823,294429AC9,EFX 6.9 07/01/2028 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"46,935.00000",Fixed Maturity
+Exelon Corporation,SPS1972368330,4057056,30161NBU4,EXC 3.25 03/15/2029 FIX USD Corporate,No,,,Senior Unsecured,Bond,3/15/2029,Fixed Maturity
+Expand Energy Corporation,SPS1675972149,4010492,845467AR0,EXPENE 5.375 02/01/2029 FIX USD Corporate,Yes,"46,204.00000","45,323.00000",Senior Unsecured,Bond,"47,150.00000",Fixed Maturity
+Extra Space Storage LP,SPS1681216404,4383065,30225VAG2,EXTRSPA 2.35 03/15/2032 FIX USD Corporate,Yes,"48,197.00000","48,197.00000",Senior Unsecured,Bond,"48,288.00000",Fixed Maturity
+Extra Space Storage LP,SPS633114752,4383065,30225VA#4,EXTRSPA 10/09/2029 FIX USD Corporate RegS,No,,,Senior Unsecured,Bond,10/9/2029,Fixed Maturity
+Federal Realty OP LP,SPS14035725,101479324,313747AF4,FEDEREA 7.48 08/15/2026 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"46,249.00000",Fixed Maturity
+"First Industrial, L.P.",SPS419359504,4064354,32055RA@6,FR-1stIndLP 04/20/2027 FIX USD Corporate RegS,No,,,Senior Unsecured,Bond,4/20/2027,Fixed Maturity
+First Maryland Capital II,SPS31507976,4049746,U32109AA5,AIB-FstMlndCap2 2.999 02/01/2027 FLT USD Corporate RegS,Yes,7/16/2026,2/1/2007,Senior Unsecured,Bond,2/1/2027,Fixed Maturity
+Ford Holdings LLC,SPS14168084,4171731,345277AE7,FORDHOL 9.3 03/01/2030 FIX USD Corporate,No,,,Senior Unsecured,Bond,"47,543.00000",Fixed Maturity
+Ford Motor Company,SPS14009291,113873,345370BH2,F 9.95 02/15/2032 FIX USD Corporate,No,,,Senior Unsecured,Bond,"48,259.00000",Fixed Maturity
+Ford Motor Company,SPS14009295,113873,345370BM1,F 7.75 06/15/2043 FIX USD Corporate,No,,,Senior Unsecured,Bond,"52,397.00000",Fixed Maturity
+Ford Motor Company,SPS14035502,113873,345370BP4,F 7.5 08/01/2026 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,235.00000",Fixed Maturity
+Ford Motor Company,SPS14037654,113873,345370BR0,F 7.4 11/01/2046 FIX USD Corporate,No,,,Senior Unsecured,Bond,"53,632.00000",Fixed Maturity
+Ford Motor Company,SPS14043002,113873,345370BS8,F 7.7 05/15/2097 FIX USD Corporate,No,,,Senior Unsecured,Bond,"72,090.00000",Fixed Maturity
+Ford Motor Company,SPS14052708,113873,345370BT6,F 6.625 02/15/2028 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,798.00000",Fixed Maturity
+Ford Motor Company,SPS14086369,113873,345370BV1,F 8.9 01/15/2032 FIX USD Corporate,No,,,Senior Unsecured,Bond,"48,228.00000",Fixed Maturity
+Ford Motor Company,SPS14087329,113873,345370BW9,F 9.98 02/15/2047 FIX USD Corporate,No,,,Senior Unsecured,Bond,"53,738.00000",Fixed Maturity
+Freedom Mortgage Corporation,SPS1848270539,4105802,U31333AG9,FREEMOR 6.625 01/15/2027 FIX USD Corporate RegS,Yes,"46,204.00000","45,306.00000",Senior Unsecured,Bond,"46,402.00000",Fixed Maturity
+GE HealthCare Technologies Inc.,SPS1814830566,108009705,36267VAL7,GEHEAL 6.377 11/22/2052 FIX USD Corporate 144A,Yes,"55,661.00000","55,661.00000",Senior Unsecured,Bond,"55,845.00000",Fixed Maturity
+"Global Medical Response, Inc.",SPS1878968083,4581397,U3163BAB5,GMEDIC 10/31/2028 FIX USD Corporate RegS,Yes,,5/20/2024,Senior Secured,Bond,"47,057.00000",Fixed Maturity
+Global Payments Inc.,SPS1758571575,4090258,37940XAH5,GLP 2.9 11/15/2031 FIX USD Corporate,Yes,"48,075.00000","48,075.00000",Senior Unsecured,Bond,"48,167.00000",Fixed Maturity
+Goldman Sachs Private Credit Corp.,SPS1983634252,107538728,U3826RAH6,GOLDSAHG 02/23/2028 FIX USD Corporate RegS,No,,,Senior Unsecured,Bond,2/23/2028,Fixed Maturity
+Goldman Sachs Private Credit Corp.,SPS1994091751,107538728,38152BAR2,GOLDSAHG 06/16/2031 FIX USD Corporate,No,,,Senior Unsecured,Bond,6/16/2031,Fixed Maturity
+Golub Capital Private Credit Fund,SPS1953804350,110706143,38179RAF2,GOLUCAHC 5.45 08/15/2028 FIX USD Corporate,No,,,Senior Unsecured,Bond,8/15/2028,Fixed Maturity
+GS Finance Corp.,SPS1885561763,4207623,40058FDE0,GSFI 09/30/2064 FLT USD Corporate,No,,,Senior Unsecured,Bond,"60,175.00000",Fixed Maturity
+GS Finance Corp.,SPS1885563461,4207623,40058FUG6,GSFI 11/29/2039 FLT USD Corporate,Yes,7/1/2026,12/1/2025,Senior Unsecured,Bond,11/29/2039,Fixed Maturity
+Halliburton Company,SPS14176439,4010641,406216AS0,HAL 7.6 08/15/2096 FIX USD Corporate 144A,No,,,Senior Unsecured,Bond,"71,817.00000",Fixed Maturity
+"Hasbro, Inc.",SPS14058449,4095387,418056AH0,HAS 6.6 07/15/2028 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,949.00000",Fixed Maturity
+"Healthcare Realty Holdings, L.P.",SPS1792655508,4345132,42225UAQ7,HEALREA 3.625 01/15/2028 FIX USD Corporate,Yes,"46,675.00000","46,675.00000",Senior Unsecured,Bond,"46,767.00000",Fixed Maturity
+"Healthcare Realty Holdings, L.P.",SPS635849717,4345132,42225UAG9,HEALREA 3.1 02/15/2030 FIX USD Corporate,Yes,"47,437.00000","47,437.00000",Senior Unsecured,Bond,"47,529.00000",Fixed Maturity
+Historic TW Inc.,SPS14028273,4004176,887315AZ2,TW-HistTWInc 8.3 01/15/2036 VAR USD Corporate,No,,,Senior Unsecured,Bond,"49,689.00000",Fixed Maturity
+Historic TW Inc.,SPS14056627,4004176,887315BM0,TW-HistTWInc 6.95 01/15/2028 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,767.00000",Fixed Maturity
+Historic TW Inc.,SPS14063043,4004176,887315BN8,TW-HistTWInc 6.625 05/15/2029 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"47,253.00000",Fixed Maturity
+Howard Hughes Holdings Inc.,SPS701331969,4265772,U44255AF1,THEHOW 4.375 02/01/2031 FIX USD Corporate RegS,Yes,"46,188.00000","46,054.00000",Senior Unsecured,Bond,"47,880.00000",Fixed Maturity
+HP Inc.,SPS1785965139,105223,40434LAN5,HPINCAA 5.5 01/15/2033 FIX USD Corporate,Yes,"48,502.00000","48,502.00000",Senior Unsecured,Bond,"48,594.00000",Fixed Maturity
+HPS Corporate Lending Fund,SPS1959590668,29558536,40440VAR6,HPSCOR FIX USD Corporate,No,,,Senior Unsecured,Bond,,Fixed Maturity
+HPS Corporate Lending Fund,SPS1999752877,29558536,40440VBF1,HPSCOR FIX USD Corporate,No,,,Senior Unsecured,Bond,,Fixed Maturity
+"iHeartCommunications, Inc.",SPS1912350935,4095086,U45057AP8,IHEAINC 7.0 01/15/2031 FIX USD Corporate RegS,Yes,"46,376.00000","46,376.00000",Senior Secured,Bond,"47,863.00000",Fixed Maturity
+"Indiana Bell Telephone Company, Incorporated",SPS32213435,4057194,454614AL2,INDIBEL 7.3 08/15/2026 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,249.00000",Fixed Maturity
+"Indiana Gas Company, Inc.",SPS14044868,4057125,45475QAH6,VVC-InGaCo 6.68 07/07/2027 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,575.00000",Fixed Maturity
+"Indiana Gas Company, Inc.",SPS14077444,4057125,45475QAR4,VVC-InGaCo 7.08 10/05/2029 FIX USD Corporate,No,,,Senior Unsecured,Bond,"47,396.00000",Fixed Maturity
+Invitation Homes Operating Partnership LP,SPS1686799318,4887375,46188BAC6,INVIHOAC 2.7 01/15/2034 FIX USD Corporate,Yes,"48,867.00000","48,867.00000",Senior Unsecured,Bond,"48,959.00000",Fixed Maturity
+ITC Holdings Corp.,SPS1838044034,4099990,U4501WAL6,ITCHC 09/22/2027 FIX USD Corporate RegS,Yes,,8/22/2027,Senior Unsecured,Bond,9/22/2027,Fixed Maturity
+Jefferies Financial Group Inc.,SPS14559250,103464,472319AC6,JEFFIN 6.25 01/15/2036 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"49,689.00000",Fixed Maturity
+Jefferies Financial Group Inc.,SPS1891126746,103464,47233WGV5,JEFFIN 08/31/2036 FLT USD Corporate,No,,,Senior Unsecured,Bond,8/31/2036,Fixed Maturity
+Jefferies Financial Group Inc.,SPS1893490168,103464,47233WHA0,JEFFIN 6.0 09/16/2036 FIX USD Corporate,Yes,,"45,916.00000",Senior Unsecured,Bond,"49,934.00000",Fixed Maturity
+Jefferies Financial Group Inc.,SPS1903319909,103464,47233WHJ1,JEFFIN 6.0 11/22/2039 FIX USD Corporate,Yes,"46,713.00000","46,713.00000",Senior Unsecured,Bond,"51,096.00000",Fixed Maturity
+Jefferies Financial Group Inc.,SPS1935137954,103464,47233WJK6,JEFFIN 6.5 03/31/2045 FIX USD Corporate,Yes,"46,295.00000","46,112.00000",Senior Unsecured,Bond,"53,052.00000",Fixed Maturity
+Jefferies Financial Group Inc.,SPS1948280473,103464,47233WKB4,JEFFIN 6.05 06/30/2035 FIX USD Corporate,No,,,Senior Unsecured,Bond,6/30/2035,Fixed Maturity
+Jefferies Financial Group Inc.,SPS1955668501,103464,47233WKK4,JEFFIN 5.85 08/08/2035 FIX USD Corporate,Yes,8/8/2027,8/8/2027,Senior Unsecured,Bond,8/8/2035,Fixed Maturity
+Jefferies Financial Group Inc.,SPS1962725703,103464,47233WKT5,JEFFIN 10/20/2045 FIX USD Corporate,No,,,Senior Unsecured,Bond,10/20/2045,Fixed Maturity
+Jefferies Financial Group Inc.,SPS1968256411,103464,47233WKZ1,JEFFIN 5.5 11/25/2035 FIX USD Corporate,Yes,11/25/2027,11/25/2027,Senior Unsecured,Bond,11/25/2035,Fixed Maturity
+Jefferies Financial Group Inc.,SPS1978548739,103464,47233WLP2,JEFFIN 5.0 01/31/2032 FIX USD Corporate,No,,,Senior Unsecured,Bond,1/31/2032,Fixed Maturity
+Jefferies Financial Group Inc.,SPS1981558671,103464,47233WLQ0,JEFFIN 6.0 02/17/2041 FIX USD Corporate,No,,,Senior Unsecured,Bond,2/17/2041,Fixed Maturity
+Jefferies Financial Group Inc.,SPS1981558673,103464,47233WLS6,JEFFIN 5.0 02/17/2032 FIX USD Corporate,Yes,2/17/2027,2/17/2027,Senior Unsecured,Bond,2/17/2032,Fixed Maturity
+Jefferies Financial Group Inc.,SPS1984711343,103464,47233WLU1,JEFFIN 5.0 02/28/2033 FIX USD Corporate,Yes,2/28/2027,2/28/2027,Senior Unsecured,Bond,2/28/2033,Fixed Maturity
+Jefferies Financial Group Inc.,SPS1986625840,103464,47233WLZ0,JEFFIN 7.0 03/17/2056 FIX USD Corporate,No,,,Senior Unsecured,Bond,3/17/2056,Fixed Maturity
+Jefferies Financial Group Inc.,SPS2001003224,103464,47233WMQ9,JEFFIN 05/31/2031 FIX USD Corporate,No,5/29/2027,5/29/2027,Senior Unsecured,Note,5/31/2031,Fixed Maturity
+Jefferies Financial Group Inc.,SPS2001003225,103464,47233WMR7,JEFFIN 05/29/2051 FIX USD Corporate,No,5/29/2027,5/29/2027,Senior Unsecured,Note,5/29/2051,Fixed Maturity
+Jefferies Financial Group Inc.,SPS643085688,103464,47233JCR7,JEFFIN 4.46086 11/29/2034 FLT USD Corporate,No,,,Senior Unsecured,Bond,"49,277.00000",Fixed Maturity
+Jefferies Financial Group Inc.,SPS690751551,103464,47233JDZ8,JEFFIN 4.0 10/19/2040 FIX USD Corporate,No,,,Senior Unsecured,Bond,"51,428.00000",Fixed Maturity
+Jersey Central Power & Light Company,SPS1997341634,4057004,476556DP7,FE-JerCenP+L 01/15/2030 FIX USD Corporate,No,,,Senior Unsecured,Bond,1/15/2030,Fixed Maturity
+Jersey Central Power & Light Company,SPS64629873,4057004,476556CV5,FE-JerCenP+L 6.15 06/01/2037 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"50,192.00000",Fixed Maturity
+"Kinder Morgan Finance Company, LLC",SPS14556964,4111520,49455WAE6,KMI-finco 01/05/2036 FIX USD Corporate 144A,Yes,,,Senior Unsecured,Bond,1/5/2036,Fixed Maturity
+"Kinder Morgan Finance Company, LLC",SPS64562590,4111520,C49355AC1,KMI-finco 01/05/2036 FIX USD Corporate RegS,Yes,,,Senior Unsecured,Bond,1/5/2036,Fixed Maturity
+"Kinder Morgan, Inc.",SPS14048016,4275772,482620AS0,KINDERM 6.67 11/01/2027 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"46,692.00000",Fixed Maturity
+"Kinder Morgan, Inc.",SPS14053446,4275772,482620AW1,KINDERM 7.25 03/01/2028 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"46,813.00000",Fixed Maturity
+"Kinder Morgan, Inc.",SPS14053447,4275772,482620AX9,KINDERM 7.45 03/01/2098 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"72,380.00000",Fixed Maturity
+Ladder Capital Finance Holdings LLLP,SPS717945595,4237798,505742AQ9,LADDERC 4.75 06/15/2029 FIX USD Corporate,Yes,"46,184.00000","45,458.00000",Senior Unsecured,Bond,"47,284.00000",Fixed Maturity
+"LGI Homes, Inc.",SPS1862056393,4398514,50187TAJ5,LGIHOM 8.75 12/15/2028 FIX USD Corporate,Yes,"46,204.00000","46,006.00000",Senior Unsecured,Bond,"47,102.00000",Fixed Maturity
+"Lowe's Companies, Inc.",SPS14052137,4004318,548661AH0,LOW 6.875 02/15/2028 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,798.00000",Fixed Maturity
+"Lowe's Companies, Inc.",SPS14066335,4004318,548661AJ6,LOW 03/15/2029 FIX USD Corporate 144A,No,,,Senior Unsecured,Bond,3/15/2029,Fixed Maturity
+"Lowe's Companies, Inc.",SPS14077635,4004318,548661AK3,LOW 6.5 03/15/2029 FIX USD Corporate,No,,,Senior Unsecured,Bond,"47,192.00000",Fixed Maturity
+"Lowe's Companies, Inc.",SPS1681217101,4004318,548661EE3,LOW 2.8 09/15/2041 FIX USD Corporate,Yes,"51,575.00000","51,575.00000",Senior Unsecured,Bond,"51,759.00000",Fixed Maturity
+"Macy's, Inc.",SPS14081521,4004104,577778BK8,M 7.875 03/01/2030 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"47,543.00000",Fixed Maturity
+"Macy's, Inc.",SPS34691053,4004104,31410HAJ0,M 6.79 07/15/2027 FIX USD Corporate,Yes,6/30/2026,7/15/2004,Senior Unsecured,Bond,7/15/2027,Fixed Maturity
+Main Street Capital Corporation,SPS1993554863,4160255,56035LA#1,MAISTR 6.93 04/15/2031 FIX USD Corporate RegS,No,,,Senior Unsecured,Bond,4/15/2031,Fixed Maturity
+"Mandalay Resort Group, LLC",SPS14038421,4107947,172909AJ2,MBG 6.7 11/15/2096 FIX USD Corporate,No,,,Senior Unsecured,Bond,11/15/2096,Fixed Maturity
+"Mandalay Resort Group, LLC",SPS14038423,4107947,172909AH6,MBG 7.0 11/15/2036 FIX USD Corporate,No,,,Senior Unsecured,Bond,11/15/2036,Fixed Maturity
+"MasTec, Inc.",SPS1803817670,4385530,576323AR0,MTZ 6.625 08/15/2029 FIX USD Corporate,Yes,6/11/2026,8/15/2024,Senior Unsecured,Bond,8/15/2029,Fixed Maturity
+May Department Stores Co.,SPS32218277,4001582,577778CD3,FD-MAY 07/15/2034 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,7/15/2034,Fixed Maturity
+MGM Growth Properties Operating Partnership LP,SPS536908645,4674780,55303XAE5,VPROPE 4.5 01/15/2028 FIX USD Corporate,No,,,Senior Unsecured,Bond,1/15/2028,Fixed Maturity
+"MidAmerican Funding, LLC",SPS14067416,4081927,59562HAC2,BRK-MidamFund 03/01/2029 FIX USD Corporate 144A,Yes,,,Senior Unsecured,Bond,3/1/2029,Fixed Maturity
+"MidAmerican Funding, LLC",SPS14082915,4081927,59562HAJ7,BRK-MidamFund 6.927 03/01/2029 FIX USD Corporate,Yes,,,Senior Secured,Bond,"47,178.00000",Fixed Maturity
+"MidAmerican Funding, LLC",SPS32218592,4081927,59562HAF5,BRK-MidamFund 03/01/2029 FIX USD Corporate,No,,,Senior Secured,Bond,"47,178.00000",Fixed Maturity
+Motiva Enterprises LLC,SPS106419376,4061620,61980AAF0,MOTE 6.85 01/15/2040 FIX USD Corporate,No,,,Senior Unsecured,Bond,1/15/2040,Fixed Maturity
+MSCI Inc.,SPS642898600,4167462,55354GAJ9,MSCINC FIX USD Corporate,No,,,Senior Unsecured,Bond,,Fixed Maturity
+"National Health Investors, Inc.",SPS309336287,102983,63633DA@3,NHI 01/13/2027 FIX USD Corporate RegS,No,,,Senior Unsecured,Bond,1/13/2027,Fixed Maturity
+"Nationwide Financial Services, Inc.",SPS277592989,108270,638612AL5,NFS 5.3 11/18/2044 FIX USD Corporate 144A,Yes,,,Senior Unsecured,Bond,"52,919.00000",Fixed Maturity
+"Nationwide Financial Services, Inc.",SPS277593059,108270,U63752AB2,NFS 5.3 11/18/2044 FIX USD Corporate RegS,Yes,,,Senior Unsecured,Bond,"52,919.00000",Fixed Maturity
+Navient Corporation,SPS14132592,102896,78490FAT6,NAVIECO 03/15/2028 FIX USD Corporate,Yes,,3/15/2008,Senior Unsecured,Bond,3/15/2028,Fixed Maturity
+Navient Corporation,SPS14132992,102896,78490FAY5,NAVIECO 03/15/2028 FIX USD Corporate,No,,,Senior Unsecured,Bond,3/15/2028,Fixed Maturity
+Navient Corporation,SPS14133537,102896,78490FBD0,NAVIECO 03/15/2028 FIX USD Corporate,Yes,,3/15/2008,Senior Unsecured,Bond,3/15/2028,Fixed Maturity
+Navient Corporation,SPS14134031,102896,78490FBJ7,NAVIECO 03/15/2028 FIX USD Corporate,Yes,,3/15/2008,Senior Unsecured,Bond,3/15/2028,Fixed Maturity
+Navient Corporation,SPS14145003,102896,78490FGC7,NAVIECO 03/15/2029 FIX USD Corporate,No,,,Senior Unsecured,Bond,3/15/2029,Fixed Maturity
+Navient Corporation,SPS14145370,102896,78490FGG8,NAVIECO 03/15/2029 FIX USD Corporate,Yes,,9/15/2008,Senior Unsecured,Bond,3/15/2029,Fixed Maturity
+Navient Corporation,SPS14145739,102896,78490FGL7,NAVIECO 03/15/2029 FIX USD Corporate,Yes,,9/15/2008,Senior Unsecured,Bond,3/15/2029,Fixed Maturity
+Navient Corporation,SPS14146123,102896,78490FGQ6,NAVIECO 03/15/2029 FIX USD Corporate,Yes,,9/15/2008,Senior Unsecured,Bond,3/15/2029,Fixed Maturity
+Navient Corporation,SPS14146477,102896,78490FGU7,NAVIECO 03/15/2029 FIX USD Corporate,Yes,,9/15/2008,Senior Unsecured,Bond,3/15/2029,Fixed Maturity
+Navient Corporation,SPS14147205,102896,78490FHC6,NAVIECO 03/15/2029 FIX USD Corporate,No,,,Senior Unsecured,Bond,3/15/2029,Fixed Maturity
+Navient Corporation,SPS14148312,102896,78490FHQ5,NAVIECO 03/15/2029 FIX USD Corporate,Yes,,3/15/2009,Senior Unsecured,Bond,3/15/2029,Fixed Maturity
+Navient Corporation,SPS14148568,102896,78490FHU6,NAVIECO 03/15/2029 FIX USD Corporate,Yes,,3/15/2009,Senior Unsecured,Bond,3/15/2029,Fixed Maturity
+Navient Corporation,SPS14149707,102896,78490FJE0,NAVIECO 03/15/2029 FIX USD Corporate,No,,,Senior Unsecured,Bond,3/15/2029,Fixed Maturity
+NCR Voyix Corporation,SPS708503640,4019364,62886EBB3,NCRVOY FIX USD Corporate 144A,No,,,Senior Unsecured,Bond,,Fixed Maturity
+"NextEra Energy Capital Holdings, Inc.",SPS1760991694,4065678,65339KBZ2,NXTENG 2.44 01/15/2032 FIX USD Corporate,Yes,"48,136.00000","48,136.00000",Senior Unsecured,Bond,"48,228.00000",Fixed Maturity
+"NextEra Energy Capital Holdings, Inc.",SPS1760991695,4065678,65339KCA6,NXTENG 3.0 01/15/2052 FIX USD Corporate,Yes,"55,349.00000","55,349.00000",Senior Unsecured,Bond,"55,533.00000",Fixed Maturity
+"NextEra Energy Capital Holdings, Inc.",SPS1800633131,4065678,65339KCL2,NXTENG 4.685 09/01/2027 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,631.00000",Fixed Maturity
+"NextEra Energy Capital Holdings, Inc.",SPS1824929509,4065678,65339KCM0,NXTENG 4.9 02/28/2028 FIX USD Corporate,Yes,"46,780.00000","46,780.00000",Senior Unsecured,Bond,"46,811.00000",Fixed Maturity
+"NextEra Energy Capital Holdings, Inc.",SPS1824929510,4065678,65339KCQ1,NXTENG 5.25 02/28/2053 FIX USD Corporate,Yes,"55,759.00000","55,759.00000",Senior Unsecured,Bond,"55,943.00000",Fixed Maturity
+"NextEra Energy Capital Holdings, Inc.",SPS1824929511,4065678,65339KCN8,NXTENG 5.0 02/28/2030 FIX USD Corporate,Yes,"47,480.00000","47,480.00000",Senior Unsecured,Bond,"47,542.00000",Fixed Maturity
+"NextEra Energy Capital Holdings, Inc.",SPS1824929512,4065678,65339KCP3,NXTENG 5.05 02/28/2033 FIX USD Corporate,Yes,"48,546.00000","48,546.00000",Senior Unsecured,Bond,"48,638.00000",Fixed Maturity
+"NextEra Energy Capital Holdings, Inc.",SPS1885042845,4065678,65339KDC1,NEXTEI 5.15 06/01/2029 FIX USD Corporate,No,,,Senior Unsecured,Bond,"47,270.00000",Fixed Maturity
+"NextEra Energy Capital Holdings, Inc.",SPS1902103546,4065678,65339KDD9,NEXTEI 4.635 11/01/2029 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"47,423.00000",Fixed Maturity
+"NextEra Energy Capital Holdings, Inc.",SPS29069261,4065678,302570403,NXTENG 10/01/2066 FIX USD Corporate,No,,,Senior Unsecured,Bond,10/1/2066,Fixed Maturity
+"NextEra Energy Capital Holdings, Inc.",SPS428742841,4065678,65339KAT7,NXTENG 3.55 05/01/2027 FIX USD Corporate,Yes,"46,419.00000","46,419.00000",Senior Unsecured,Bond,"46,508.00000",Fixed Maturity
+"NextEra Energy Capital Holdings, Inc.",SPS607925173,4065678,65339KBJ8,NXTENG 3.5 04/01/2029 FIX USD Corporate,Yes,"47,119.00000","47,119.00000",Senior Unsecured,Bond,"47,209.00000",Fixed Maturity
+"NextEra Energy Capital Holdings, Inc.",SPS666803624,4065678,65339KBR0,NXTENG 2.25 06/01/2030 FIX USD Corporate,Yes,"47,543.00000","47,543.00000",Senior Unsecured,Bond,"47,635.00000",Fixed Maturity
+"NextEra Energy Capital Holdings, Inc.",SPS717055991,4065678,65339KBW9,NXTENG 1.9 06/15/2028 FIX USD Corporate,Yes,"46,858.00000","46,858.00000",Senior Unsecured,Bond,"46,919.00000",Fixed Maturity
+"Nordstrom, Inc.",SPS14053808,4053619,655664AH3,JWN 6.95 03/15/2028 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,827.00000",Fixed Maturity
+Norfolk Southern Corporation,SPS139961530,4021829,655844BE7,NSC 10/01/2041 FIX USD Corporate 144A,Yes,,,Senior Unsecured,Bond,10/1/2041,Fixed Maturity
+Norfolk Southern Corporation,SPS142250094,4021829,U65584AB7,NSC 10/01/2041 FIX USD Corporate RegS,Yes,,,Senior Unsecured,Bond,10/1/2041,Fixed Maturity
+Norfolk Southern Corporation,SPS1677747918,4021829,655844CL0,NSC 2.9 08/25/2051 FIX USD Corporate,Yes,"55,209.00000","55,209.00000",Senior Unsecured,Bond,"55,390.00000",Fixed Maturity
+Norfolk Southern Corporation,SPS542231141,4021829,655844BW7,NSC 3.942 11/01/2047 FIX USD Corporate 144A,Yes,"53,813.00000","53,813.00000",Senior Unsecured,Bond,"53,997.00000",Fixed Maturity
+Norfolk Southern Corporation,SPS542273153,4021829,U65584AF8,NSC 3.942 11/01/2047 FIX USD Corporate RegS,Yes,"53,813.00000","53,813.00000",Senior Unsecured,Bond,"53,997.00000",Fixed Maturity
+Norfolk Southern Railway Company,SPS14165866,4073968,655855FB5,NSC-Railway 7.875 05/15/2043 FIX USD Corporate,No,,,Senior Unsecured,Bond,"52,366.00000",Fixed Maturity
+Northrop Grumman Corporation,SPS14093116,4069910,666807AU6,NORGRM 02/15/2031 FIX USD Corporate 144A,Yes,,,Senior Unsecured,Bond,2/15/2031,Fixed Maturity
+Northrop Grumman Corporation,SPS32220206,4069910,666807AV4,NORGRM 02/15/2031 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,2/15/2031,Fixed Maturity
+Northrop Grumman Systems Corporation,SPS14078224,4312710,872649BH0,NOC-SysCorp 7.75 06/01/2029 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"47,270.00000",Fixed Maturity
+Occidental Petroleum Corporation,SPS1684713514,4010841,674599EG6,OXY 6.6 03/15/2046 FIX USD Corporate 144A,No,,,Senior Unsecured,Bond,3/15/2046,Fixed Maturity
+Occidental Petroleum Corporation,SPS634205757,4010841,674599DP7,OXY 7.0 11/15/2027 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,706.00000",Fixed Maturity
+Occidental Petroleum Corporation,SPS634205761,4010841,674599DT9,OXY 7.2 03/15/2029 FIX USD Corporate,No,,,Senior Unsecured,Bond,"47,192.00000",Fixed Maturity
+"ONEOK, Inc.",SPS14060951,4010846,682680AB9,OKE 6.875 09/30/2028 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"47,026.00000",Fixed Maturity
+"ONEOK, Inc.",SPS666570504,4010846,682680BF9,OKE 7.15 01/15/2051 FIX USD Corporate,Yes,"54,984.00000","54,984.00000",Senior Unsecured,Bond,"55,168.00000",Fixed Maturity
+"ONEOK, Inc.",SPS666570566,4010846,682680BE2,OKE 6.35 01/15/2031 FIX USD Corporate,Yes,"47,771.00000","47,771.00000",Senior Unsecured,Bond,"47,863.00000",Fixed Maturity
+Oracle Corporation,SPS661501797,4041363,68389XBW4,ORCLE 3.6 04/01/2040 FIX USD Corporate,Yes,"51,044.00000","51,044.00000",Senior Unsecured,Bond,"51,227.00000",Fixed Maturity
+Oracle Corporation,SPS661501798,4041363,68389XBY0,ORCLE 3.85 04/01/2060 FIX USD Corporate,Yes,"58,349.00000","58,349.00000",Senior Unsecured,Bond,"58,532.00000",Fixed Maturity
+Oracle Corporation,SPS661501800,4041363,68389XBX2,ORCLE 3.6 04/01/2050 FIX USD Corporate,Yes,"54,697.00000","54,697.00000",Senior Unsecured,Bond,"54,879.00000",Fixed Maturity
+Pacific Bell Telephone Company,SPS14015702,4057208,694032AV5,PACIFIB 07/15/2043 FIX USD Corporate,Yes,,7/15/2013,Senior Unsecured,Bond,7/15/2043,Fixed Maturity
+Pacific Bell Telephone Company,SPS32220862,4057208,694032BH5,PACIFIB 07/15/2043 FIX USD Corporate,Yes,,7/15/2013,Senior Unsecured,Bond,7/15/2043,Fixed Maturity
+Pacific Gas and Electric Company,SPS1771741932,4004218,694308KB2,PCG-PacGas+Elec 4.2 03/01/2029 FIX USD Corporate,Yes,"47,119.00000","47,119.00000",Senior Secured,Bond,"47,178.00000",Fixed Maturity
+Pacific Gas and Electric Company,SPS1771741934,4004218,694308KD8,PCG-PacGas+Elec 5.25 03/01/2052 FIX USD Corporate,Yes,"55,397.00000","55,397.00000",Senior Secured,Bond,"55,579.00000",Fixed Maturity
+Pacific Gas and Electric Company,SPS1786038271,4004218,694308KF3,PCG-PacGas+Elec 5.45 06/15/2027 FIX USD Corporate,Yes,"46,522.00000","46,522.00000",Senior Secured,Bond,"46,553.00000",Fixed Maturity
+Pacific Gas and Electric Company,SPS1786038272,4004218,694308KG1,PCG-PacGas+Elec 5.9 06/15/2032 FIX USD Corporate,Yes,"48,288.00000","48,288.00000",Senior Secured,Bond,"48,380.00000",Fixed Maturity
+Pacific Gas and Electric Company,SPS1820704226,4004218,694308KH9,PCG-PacGas+Elec 6.75 01/15/2053 FIX USD Corporate,Yes,"55,715.00000","55,715.00000",Senior Secured,Bond,"55,899.00000",Fixed Maturity
+Pacific Gas and Electric Company,SPS1831053386,4004218,694308KK2,PCG-PacGas+Elec 6.7 04/01/2053 FIX USD Corporate,Yes,"55,793.00000","55,793.00000",Senior Secured,Bond,"55,975.00000",Fixed Maturity
+Pacific Gas and Electric Company,SPS1840069904,4004218,694308KL0,PCG-PacGas+Elec 6.1 01/15/2029 FIX USD Corporate,Yes,"47,102.00000","47,102.00000",Senior Secured,Bond,"47,133.00000",Fixed Maturity
+Pacific Gas and Electric Company,SPS1872777034,4004218,694308KQ9,PCG-PacGas+Elec 5.55 05/15/2029 FIX USD Corporate,Yes,"47,223.00000","47,223.00000",Senior Secured,Bond,"47,253.00000",Fixed Maturity
+Pacific Gas and Electric Company,SPS1872777035,4004218,694308KR7,PCG-PacGas+Elec 5.8 05/15/2034 FIX USD Corporate,Yes,"48,990.00000","48,990.00000",Senior Secured,Bond,"49,079.00000",Fixed Maturity
+Pacific Gas and Electric Company,SPS1932376728,4004218,694308KU0,PCG-PacGas+Elec 5.7 03/01/2035 FIX USD Corporate,Yes,"49,279.00000","49,279.00000",Senior Secured,Bond,"49,369.00000",Fixed Maturity
+Pacific Gas and Electric Company,SPS1932376729,4004218,694308KV8,PCG-PacGas+Elec 6.15 03/01/2055 FIX USD Corporate,Yes,"56,493.00000","56,493.00000",Senior Secured,Bond,"56,674.00000",Fixed Maturity
+Pacific Gas and Electric Company,SPS1945918942,4004218,694308KW6,PCG-PacGas+Elec 5.0 06/04/2028 FIX USD Corporate,Yes,"46,877.00000","46,877.00000",Senior Secured,Bond,6/4/2028,Fixed Maturity
+Pacific Gas and Electric Company,SPS1945918943,4004218,694308KX4,PCG-PacGas+Elec 6.0 08/15/2035 FIX USD Corporate,Yes,"49,444.00000","49,444.00000",Senior Secured,Bond,8/15/2035,Fixed Maturity
+Pacific Gas and Electric Company,SPS1961942870,4004218,694308KY2,PCG-PacGas+Elec 5.05 10/15/2032 FIX USD Corporate,Yes,"48,441.00000",8/15/2032,Senior Secured,Bond,10/15/2032,Fixed Maturity
+Pacific Gas and Electric Company,SPS1961942871,4004218,694308KZ9,PCG-PacGas+Elec 6.1 10/15/2055 FIX USD Corporate,Yes,"56,719.00000",4/15/2055,Senior Secured,Bond,10/15/2055,Fixed Maturity
+Pacific Gas and Electric Company,SPS1983758881,4004218,694308LB1,PCG-PacGas+Elec 6.0 05/01/2056 FIX USD Corporate,Yes,11/1/2055,11/1/2055,Senior Secured,Bond,5/1/2056,Fixed Maturity
+Pacific Gas and Electric Company,SPS1983758907,4004218,694308LA3,PCG-PacGas+Elec 5.2 05/01/2036 FIX USD Corporate,Yes,2/1/2036,2/1/2036,Senior Secured,Bond,5/1/2036,Fixed Maturity
+Pacific Gas and Electric Company,SPS672609677,4004218,694308JG3,PCG-PacGas+Elec 2.5 02/01/2031 FIX USD Corporate,Yes,"47,788.00000","47,788.00000",Senior Secured,Bond,"47,880.00000",Fixed Maturity
+Pacific Gas and Electric Company,SPS672614173,4004218,694308JF5,PCG-PacGas+Elec 2.1 08/01/2027 FIX USD Corporate,Yes,"46,539.00000","46,539.00000",Senior Secured,Bond,"46,600.00000",Fixed Maturity
+Pacific Gas and Electric Company,SPS672614174,4004218,694308JH1,PCG-PacGas+Elec 3.3 08/01/2040 FIX USD Corporate,Yes,"51,167.00000","51,167.00000",Senior Secured,Bond,"51,349.00000",Fixed Maturity
+Pacific Gas and Electric Company,SPS672614175,4004218,694308JJ7,PCG-PacGas+Elec 3.5 08/01/2050 FIX USD Corporate,Yes,"54,820.00000","54,820.00000",Senior Secured,Bond,"55,001.00000",Fixed Maturity
+Pacific Gas and Electric Company,SPS673519730,4004218,694308JK4,PCG-PacGas+Elec 3.75 07/01/2028 FIX USD Corporate,Yes,,,Senior Secured,Bond,"46,935.00000",Fixed Maturity
+Pacific Gas and Electric Company,SPS673519732,4004218,694308JM0,PCG-PacGas+Elec 4.55 07/01/2030 FIX USD Corporate,Yes,"47,484.00000","47,484.00000",Senior Secured,Bond,"47,665.00000",Fixed Maturity
+Pacific Gas and Electric Company,SPS705892846,4004218,694308JT5,PCG-PacGas+Elec 3.25 06/01/2031 FIX USD Corporate,Yes,"47,908.00000","47,908.00000",Senior Secured,Bond,"48,000.00000",Fixed Maturity
+PacifiCorp,SPS14165434,4001587,695114BX5,SCOTPO-Pacifico 5.9 08/15/2034 FIX USD Corporate,Yes,,,Senior Secured,Bond,"49,171.00000",Fixed Maturity
+PacifiCorp,SPS1837759730,4001587,695114DA3,SCOTPO-Pacifico 5.5 05/15/2054 FIX USD Corporate,Yes,"56,203.00000","56,203.00000",Senior Secured,Bond,"56,384.00000",Fixed Maturity
+PacifiCorp,SPS1982574572,4001587,695114DH8,SCOTPO-Pacifico 4.25 03/15/2029 FIX USD Corporate,Yes,2/15/2029,2/15/2029,Senior Secured,Bond,3/15/2029,Fixed Maturity
+PacifiCorp,SPS28602401,4001587,695114CA4,SCOTPO-Pacifico 6.1 08/01/2036 FIX USD Corporate 144A,Yes,,,Senior Secured,Bond,"49,888.00000",Fixed Maturity
+PacifiCorp,SPS33224902,4001587,695114CE6,SCOTPO-Pacifico 5.75 04/01/2037 FIX USD Corporate,Yes,,,Senior Secured,Bond,"50,131.00000",Fixed Maturity
+PacifiCorp,SPS37480617,4001587,695114CG1,SCOTPO-Pacifico 6.25 10/15/2037 FIX USD Corporate,Yes,,,Senior Secured,Bond,"50,328.00000",Fixed Maturity
+PacifiCorp,SPS573563734,4001587,695114CT3,SCOTPO-Pacifico 4.125 01/15/2049 FIX USD Corporate,Yes,"54,254.00000","54,254.00000",Senior Secured,Bond,"54,438.00000",Fixed Maturity
+PacifiCorp,SPS604263577,4001587,695114CU0,SCOTPO-Pacifico 3.5 06/15/2029 FIX USD Corporate,Yes,"47,192.00000","47,192.00000",Senior Secured,Bond,"47,284.00000",Fixed Maturity
+PacifiCorp,SPS604263578,4001587,695114CV8,SCOTPO-Pacifico 4.15 02/15/2050 FIX USD Corporate,Yes,"54,650.00000","54,650.00000",Senior Secured,Bond,"54,834.00000",Fixed Maturity
+PacifiCorp,SPS64621708,4001587,U69458AA2,SCOTPO-Pacifico 6.1 08/01/2036 FIX USD Corporate RegS,Yes,,,Senior Secured,Bond,"49,888.00000",Fixed Maturity
+"Pipeline Funding Company, LLC",SPS73143603,4243759,724060AA6,PIPEFUN 7.5 01/15/2030 FIX USD Corporate 144A,Yes,,,Senior Secured,Bond,"47,498.00000",Serial Maturity
+"Public Service Company of North Carolina, Incorporated",SPS14038977,4057139,744516AB1,SCG-PSCN 7.45 12/15/2026 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,371.00000",Fixed Maturity
+Public Service Company of Oklahoma,SPS1677250893,4057023,744533BP4,AEP-PubSvcOK 3.15 08/15/2051 FIX USD Corporate,Yes,"55,199.00000","55,199.00000",Senior Unsecured,Bond,"55,380.00000",Fixed Maturity
+"Qwest Capital Funding, Inc.",SPS31497284,4136576,U74902AD6,QUS-CapFund 02/15/2031 FIX USD Corporate RegS,No,,,Senior Unsecured,Bond,2/15/2031,Fixed Maturity
+Qwest Corporation,SPS14014233,4057217,624284BD6,QUS-Corp 7.375 05/01/2030 FIX USD Corporate,No,,,Senior Unsecured,Bond,"47,604.00000",Fixed Maturity
+Qwest Corporation,SPS14015047,4057217,668027AT2,QUS-Corp 7.75 05/01/2030 FIX USD Corporate,No,,,Senior Unsecured,Bond,"47,604.00000",Fixed Maturity
+Range Resources Corporation,SPS1764217635,4135999,75281ABL2,RRC 4.75 02/15/2030 FLT USD Corporate,Yes,6/15/2026,2/15/2025,Senior Unsecured,Bond,2/15/2030,Fixed Maturity
+Raytheon Company,SPS14045686,4020418,755111AF8,RTN 7.2 08/15/2027 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"46,614.00000",Fixed Maturity
+Raytheon Company,SPS14062322,4020418,755111AP6,RTN 7.0 11/01/2028 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"47,058.00000",Fixed Maturity
+Rithm Capital Corp.,SPS1873375400,4347089,U65228AB1,RITHCAP 8.0 03/01/2029 FIX USD Corporate,No,,,Senior Unsecured,Bond,3/1/2029,Fixed Maturity
+"Rocket Software, Inc.",SPS1964397593,4246858,77314EAD0,ROCKSOF 11/28/2028 FLT USD Corporate,No,,,Senior Secured,Bond,11/28/2028,Fixed Maturity
+RTX Corporation,SPS669021932,4001600,U7532YAK0,RAYTHTE 11/15/2027 FIX USD Corporate RegS,No,,,Senior Unsecured,Bond,11/15/2027,Fixed Maturity
+RTX Corporation,SPS669021933,4001600,U7532YAL8,GLBL REGS NT 36,No,,,Senior Unsecured,Note,7/1/2036,
+RTX Corporation,SPS669021934,4001600,U7532YAM6,RTXCOR 7.0 04/15/2038 FIX USD Corporate RegS,No,,,Senior Unsecured,Bond,4/15/2038,Fixed Maturity
+RTX Corporation,SPS669021935,4001600,U7532YAN4,GLBL REGS NT 46,No,,,Senior Unsecured,Note,12/10/2046,
+"Sabine Pass Liquefaction, LLC",SPS1815101577,4368513,U77888AN2,SABIPAS 09/15/2037 FIX USD Corporate RegS,Yes,,3/15/2037,Senior Secured,Bond,9/15/2037,Serial Maturity
+"Sabine Pass Liquefaction, LLC",SPS1815101683,4368513,785592AY2,SABIPAS 09/15/2037 FIX USD Corporate 144A,Yes,,3/15/2037,Senior Secured,Bond,9/15/2037,Serial Maturity
+"Sabine Pass Liquefaction, LLC",SPS1849002116,4368513,785592AZ9,SABIPAS 5.9 09/15/2037 FIX USD Corporate,Yes,"50,114.00000","50,114.00000",Senior Secured,Bond,"50,298.00000",Serial Maturity
+Six Flags Entertainment Corporation,SPS622854468,4121677,150190AD8,CEDAR 5.25 07/15/2029 FIX USD Corporate,Yes,"46,204.00000","45,488.00000",Senior Unsecured,Bond,"47,314.00000",Fixed Maturity
+Southern California Edison Company,SPS112583104,4009083,842400FQ1,EIX-SouCalEd 4.5 09/01/2040 FIX USD Corporate,Yes,"51,196.00000","51,196.00000",Senior Secured,Bond,"51,380.00000",Fixed Maturity
+Southern California Edison Company,SPS14151148,4009083,842400ES8,EIX-SouCalEd 6.0 01/15/2034 FIX USD Corporate,Yes,,,Senior Secured,Bond,"48,959.00000",Fixed Maturity
+Southern California Edison Company,SPS14157728,4009083,842400EV1,EIX-SouCalEd 5.75 04/01/2035 FIX USD Corporate,Yes,,,Senior Secured,Bond,"49,400.00000",Fixed Maturity
+Southern California Edison Company,SPS14172129,4009083,842400EZ2,EIX-SouCalEd 5.55 01/15/2036 FIX USD Corporate,Yes,,,Senior Secured,Bond,"49,689.00000",Fixed Maturity
+Southern California Edison Company,SPS14179241,4009083,842400FA6,EIX-SouCalEd 5.35 07/15/2035 FIX USD Corporate,Yes,,,Senior Secured,Bond,"49,505.00000",Fixed Maturity
+Southern California Edison Company,SPS143212055,4009083,842400FT5,EIX-SouCalEd 3.9 12/01/2041 FIX USD Corporate,Yes,"51,653.00000","51,653.00000",Senior Secured,Bond,"51,836.00000",Fixed Maturity
+Southern California Edison Company,SPS1763903340,4009083,842400HM8,EIX-SouCalEd 2.75 02/01/2032 FIX USD Corporate,Yes,"48,153.00000","48,153.00000",Senior Secured,Bond,"48,245.00000",Fixed Maturity
+Southern California Edison Company,SPS1763903341,4009083,842400HN6,EIX-SouCalEd 3.45 02/01/2052 FIX USD Corporate,Yes,"55,366.00000","55,366.00000",Senior Secured,Bond,"55,550.00000",Fixed Maturity
+Southern California Edison Company,SPS177843184,4009083,842400FV0,EIX-SouCalEd 4.05 03/15/2042 FIX USD Corporate,Yes,"51,759.00000","51,759.00000",Senior Secured,Bond,"51,940.00000",Fixed Maturity
+Southern California Edison Company,SPS1783883637,4009083,842400HQ9,EIX-SouCalEd 4.7 06/01/2027 FIX USD Corporate,Yes,"46,508.00000","46,508.00000",Senior Secured,Bond,"46,539.00000",Fixed Maturity
+Southern California Edison Company,SPS1783883638,4009083,842400HR7,EIX-SouCalEd 5.45 06/01/2052 FIX USD Corporate,Yes,"55,488.00000","55,488.00000",Senior Secured,Bond,"55,671.00000",Fixed Maturity
+Southern California Edison Company,SPS1814214976,4009083,842400HT3,EIX-SouCalEd 5.95 11/01/2032 FIX USD Corporate,Yes,"48,427.00000","48,427.00000",Senior Secured,Bond,"48,519.00000",Fixed Maturity
+Southern California Edison Company,SPS1814214977,4009083,842400HS5,EIX-SouCalEd 5.85 11/01/2027 FIX USD Corporate,Yes,"46,661.00000","46,661.00000",Senior Secured,Bond,"46,692.00000",Fixed Maturity
+Southern California Edison Company,SPS1827629925,4009083,842400HU0,EIX-SouCalEd 5.3 03/01/2028 FIX USD Corporate,Yes,"46,784.00000","46,784.00000",Senior Secured,Bond,"46,813.00000",Fixed Maturity
+Southern California Edison Company,SPS1827629926,4009083,842400HV8,EIX-SouCalEd 5.7 03/01/2053 FIX USD Corporate,Yes,"55,763.00000","55,763.00000",Senior Secured,Bond,"55,944.00000",Fixed Maturity
+Southern California Edison Company,SPS1838048845,4009083,842400HW6,EIX-SouCalEd 4.9 06/01/2026 FIX USD Corporate,Yes,,"46,143.00000",Senior Secured,Bond,"46,174.00000",Fixed Maturity
+Southern California Edison Company,SPS1838048846,4009083,842400HX4,EIX-SouCalEd 5.875 12/01/2053 FIX USD Corporate,Yes,"56,036.00000","56,036.00000",Senior Secured,Bond,"56,219.00000",Fixed Maturity
+Southern California Edison Company,SPS1867801573,4009083,842400HZ9,EIX-SouCalEd 5.2 06/01/2034 FIX USD Corporate,Yes,"49,004.00000","49,004.00000",Senior Secured,Bond,"49,096.00000",Fixed Maturity
+Southern California Edison Company,SPS1867801574,4009083,842400JA2,EIX-SouCalEd 4.875 02/01/2027 FIX USD Corporate,Yes,"46,388.00000","46,388.00000",Senior Secured,Bond,"46,419.00000",Fixed Maturity
+Southern California Edison Company,SPS1872828499,4009083,842400JC8,EIX-SouCalEd 5.15 06/01/2029 FIX USD Corporate,Yes,"47,239.00000","47,239.00000",Senior Secured,Bond,"47,270.00000",Fixed Maturity
+Southern California Edison Company,SPS1872828501,4009083,842400JD6,EIX-SouCalEd 5.75 04/15/2054 FIX USD Corporate,Yes,"56,172.00000","56,172.00000",Senior Secured,Bond,"56,354.00000",Fixed Maturity
+Southern California Edison Company,SPS1880363871,4009083,842400JE4,EIX-SouCalEd 5.45 06/01/2031 FIX USD Corporate,Yes,"47,939.00000","47,939.00000",Senior Secured,Bond,"48,000.00000",Fixed Maturity
+Southern California Edison Company,SPS1893299773,4009083,842400JF1,EIX-SouCalEd 4.4 09/06/2026 FIX USD Corporate,Yes,,,Senior Secured,Bond,"46,271.00000",Fixed Maturity
+Southern California Edison Company,SPS1915273746,4009083,842400JG9,EIX-SouCalEd 5.45 03/01/2035 FIX USD Corporate,Yes,"49,279.00000","49,279.00000",Senior Secured,Bond,"49,369.00000",Fixed Maturity
+Southern California Edison Company,SPS1915273747,4009083,842400JH7,EIX-SouCalEd 5.9 03/01/2055 FIX USD Corporate,Yes,"56,493.00000","56,493.00000",Senior Secured,Bond,"56,674.00000",Fixed Maturity
+Southern California Edison Company,SPS1934881041,4009083,842400JJ3,EIX-SouCalEd 5.25 03/15/2030 FIX USD Corporate,Yes,"47,529.00000","47,529.00000",Senior Secured,Bond,"47,557.00000",Fixed Maturity
+Southern California Edison Company,SPS1934881042,4009083,842400JK0,EIX-SouCalEd 6.2 09/15/2055 FIX USD Corporate,Yes,"56,688.00000","56,688.00000",Senior Secured,Bond,"56,872.00000",Fixed Maturity
+Southern California Edison Company,SPS1985742619,4009083,842400JL8,EIX-SouCalEd 4.8 03/15/2033 FIX USD Corporate,Yes,12/15/2032,12/15/2032,Senior Secured,Bond,3/15/2033,Fixed Maturity
+Southern California Edison Company,SPS1998907781,4009083,842400JM6,EIX-SouCalEd 4.95 09/15/2031 FIX USD Corporate,Yes,8/15/2031,8/15/2031,Senior Secured,Bond,9/15/2031,Fixed Maturity
+Southern California Edison Company,SPS231601759,4009083,842400FW8,EIX-SouCalEd 3.9 03/15/2043 FIX USD Corporate,Yes,"52,124.00000","52,124.00000",Senior Secured,Bond,"52,305.00000",Fixed Maturity
+Southern California Edison Company,SPS247431684,4009083,842400FZ1,EIX-SouCalEd 4.65 10/01/2043 FIX USD Corporate,Yes,"52,322.00000","52,322.00000",Senior Secured,Bond,"52,505.00000",Fixed Maturity
+Southern California Edison Company,SPS25628949,4009083,842400FC2,EIX-SouCalEd 5.625 02/01/2036 FIX USD Corporate,Yes,,,Senior Secured,Bond,"49,706.00000",Fixed Maturity
+Southern California Edison Company,SPS281965523,4009083,842400GE7,EIX-SouCalEd 3.6 02/01/2045 FIX USD Corporate,Yes,"52,810.00000","52,810.00000",Senior Secured,Bond,"52,994.00000",Fixed Maturity
+Southern California Edison Company,SPS30510143,4009083,842400FF5,EIX-SouCalEd 5.55 01/15/2037 FIX USD Corporate,Yes,,,Senior Secured,Bond,"50,055.00000",Fixed Maturity
+Southern California Edison Company,SPS32224676,4009083,842400EW9,EIX-SouCalEd 5.75 04/01/2035 FIX USD Corporate,Yes,,,Senior Secured,Bond,"49,400.00000",Fixed Maturity
+Southern California Edison Company,SPS32224677,4009083,842400FE8,EIX-SouCalEd 5.625 02/01/2036 FIX USD Corporate,Yes,,,Senior Secured,Bond,"49,706.00000",Fixed Maturity
+Southern California Edison Company,SPS32224678,4009083,842400FG3,EIX-SouCalEd 5.55 01/15/2037 FIX USD Corporate,Yes,,,Senior Secured,Bond,"50,055.00000",Fixed Maturity
+Southern California Edison Company,SPS40123953,4009083,842400FH1,EIX-SouCalEd 5.95 02/01/2038 FIX USD Corporate,Yes,,,Senior Secured,Bond,"50,437.00000",Fixed Maturity
+Southern California Edison Company,SPS424152027,4009083,842400GG2,EIX-SouCalEd 4.0 04/01/2047 FIX USD Corporate,Yes,"53,601.00000","53,601.00000",Senior Secured,Bond,"53,783.00000",Fixed Maturity
+Southern California Edison Company,SPS54125736,4009083,842400FL2,EIX-SouCalEd 6.05 03/15/2039 FIX USD Corporate,Yes,,,Senior Secured,Bond,"50,844.00000",Fixed Maturity
+Southern California Edison Company,SPS554457255,4009083,842400GJ6,EIX-SouCalEd 3.65 03/01/2028 FIX USD Corporate,Yes,"46,722.00000","46,722.00000",Senior Secured,Bond,"46,813.00000",Fixed Maturity
+Southern California Edison Company,SPS554457256,4009083,842400GK3,EIX-SouCalEd 4.125 03/01/2048 FIX USD Corporate,Yes,"53,936.00000","53,936.00000",Senior Secured,Bond,"54,118.00000",Fixed Maturity
+Southern California Edison Company,SPS606122901,4009083,842400GQ0,EIX-SouCalEd 4.2 03/01/2029 FIX USD Corporate,Yes,"47,088.00000","47,088.00000",Senior Secured,Bond,"47,178.00000",Fixed Maturity
+Southern California Edison Company,SPS606122902,4009083,842400GR8,EIX-SouCalEd 4.875 03/01/2049 FIX USD Corporate,Yes,"54,302.00000","54,302.00000",Senior Secured,Bond,"54,483.00000",Fixed Maturity
+Southern California Edison Company,SPS631713038,4009083,842400GS6,EIX-SouCalEd 2.85 08/01/2029 FIX USD Corporate,Yes,"47,239.00000","47,239.00000",Senior Secured,Bond,"47,331.00000",Fixed Maturity
+Southern California Edison Company,SPS650140239,4009083,842400GT4,EIX-SouCalEd 3.65 02/01/2050 FIX USD Corporate,Yes,"54,636.00000","54,636.00000",Senior Secured,Bond,"54,820.00000",Fixed Maturity
+Southern California Edison Company,SPS657381181,4009083,842400GU1,EIX-SouCalEd 2.25 06/01/2030 FIX USD Corporate,Yes,"47,543.00000","47,543.00000",Senior Secured,Bond,"47,635.00000",Fixed Maturity
+Southern California Edison Company,SPS700276747,4009083,842400GY3,EIX-SouCalEd 2.95 02/01/2051 FIX USD Corporate,Yes,"55,001.00000","55,001.00000",Senior Secured,Bond,"55,185.00000",Fixed Maturity
+Southern California Edison Company,SPS717991856,4009083,842400HF3,EIX-SouCalEd 3.65 06/01/2051 FIX USD Corporate,Yes,"55,123.00000","55,123.00000",Senior Secured,Bond,"55,305.00000",Fixed Maturity
+Southern California Edison Company,SPS99254812,4009083,842400FP3,EIX-SouCalEd 5.5 03/15/2040 FIX USD Corporate,Yes,,,Senior Secured,Bond,"51,210.00000",Fixed Maturity
+Southwest Gas Corporation,SPS14043803,4041957,84489PAC2,SWX 7.92 06/04/2027 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,542.00000",Fixed Maturity
+"Southwest Gas Holdings, Inc.",SPS14035364,4884928,844895AL6,SWX 8.0 08/01/2026 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,235.00000",Fixed Maturity
+"Southwest Gas Holdings, Inc.",SPS14076651,4884928,844895AM4,SWX 8.0 08/01/2026 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,235.00000",Fixed Maturity
+Symetra Financial Corporation,SPS1876609132,4092016,U79664AC9,SYMEFIN 5.8677 04/03/2032 FIX USD Corporate RegS,No,,,Senior Unsecured,Bond,4/3/2032,Fixed Maturity
+"System Energy Resources, Inc.",SPS1911496458,4056971,871911AV5,ETR-SysEnRes 5.3 12/15/2034 FIX USD Corporate,Yes,"49,202.00000","49,202.00000",Senior Secured,Bond,"49,293.00000",Fixed Maturity
+"Talcott Resolution Life, Inc.",SPS14043960,109080,416592AC7,TALCORE 7.65 06/15/2027 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"46,553.00000",Fixed Maturity
+Tampa Electric Company,SPS630376931,3010781,875127BG6,TE-TampaElec 3.625 06/15/2050 FIX USD Corporate,Yes,"54,772.00000","54,772.00000",Senior Unsecured,Bond,"54,954.00000",Fixed Maturity
+"Tenaska Georgia Partners, L.P.",SPS14087539,4063355,88031JAB2,TENGEO 9.5 02/01/2030 FIX USD Corporate,Yes,,,Senior Secured,Bond,"47,515.00000",Serial Maturity
+"Tenaska Georgia Partners, L.P.",SPS31498691,4063355,U88020AA7,TENGEO 02/01/2030 FIX USD Corporate RegS,Yes,,,Senior Secured,Bond,2/1/2030,Serial Maturity
+"Tennessee Gas Pipeline Company, L.L.C.",SPS14041043,4057165,880451AS8,TENNGAS 7.0 03/15/2027 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"46,461.00000",Fixed Maturity
+"Tennessee Gas Pipeline Company, L.L.C.",SPS14041045,4057165,880451AU3,TENNGAS 7.625 04/01/2037 FIX USD Corporate,No,,,Senior Unsecured,Bond,"50,131.00000",Fixed Maturity
+"Tennessee Gas Pipeline Company, L.L.C.",SPS14061277,4057165,880451AV1,TENNGAS 7.0 10/15/2028 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"47,041.00000",Fixed Maturity
+"Texas Gas Transmission, LLC",SPS14044702,4057167,882440AN0,BRDPLP-TGT 7.25 07/15/2027 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"46,583.00000",Fixed Maturity
+The Allstate Corporation,SPS26465134,103247,020002AT8,ALL 5.95 04/01/2036 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"49,766.00000",Fixed Maturity
+The Bank of New York Mellon Corporation,SPS31692326,100144,U06405CU3,BNYMEL 07/11/2053 FIX GBP Corporate RegS,No,,,Senior Unsecured,Bond,"56,076.00000",Fixed Maturity
+The Charles Schwab Corporation,SPS697349226,102775,808513BH7,PERP -H NT,No,,,Senior Unsecured,Note,,
+The Dayton Power and Light Company,SPS1956879001,4017451,240019BW8,DPL-DaytonP+L 08/15/2030 FIX USD Corporate 144A,Yes,,"47,679.00000",Senior Secured,Bond,8/15/2030,Fixed Maturity
+The Dayton Power and Light Company,SPS1956890372,4017451,U23926AC9,DPL-DaytonP+L 08/15/2030 FIX USD Corporate RegS,Yes,,"47,679.00000",Senior Secured,Bond,8/15/2030,Fixed Maturity
+The Dayton Power and Light Company,SPS618234449,4017451,240019BT5,DPL-DaytonP+L 06/15/2049 FIX USD Corporate 144A,Yes,,12/15/2048,Senior Secured,Bond,6/15/2049,Fixed Maturity
+The Dayton Power and Light Company,SPS618234451,4017451,240019BV0,AESOHI 3.95 06/15/2049 FIX USD Corporate,Yes,"54,407.00000","54,407.00000",Senior Secured,Bond,"54,589.00000",Fixed Maturity
+The Dayton Power and Light Company,SPS618287401,4017451,U23926AB1,DPL-DaytonP+L 06/15/2049 FIX USD Corporate RegS,Yes,,12/15/2048,Senior Secured,Bond,6/15/2049,Fixed Maturity
+"The Goldman Sachs Group, Inc.",SPS1865366037,4039450,38151FPJ6,GS 4.75 10/31/2035 FIX USD Corporate,No,,,Senior Unsecured,Bond,10/31/2035,Fixed Maturity
+"The Goldman Sachs Group, Inc.",SPS292497318,4039450,38148TGM5,GS 10/22/2027 FLT USD Corporate,Yes,6/30/2026,1/22/2016,Senior Unsecured,Bond,10/22/2027,Fixed Maturity
+"The Goldman Sachs Group, Inc.",SPS541441374,4039450,38148YAA6,GS 4.017 10/31/2038 FLT USD Corporate,Yes,"50,344.00000","50,344.00000",Senior Unsecured,Bond,"50,709.00000",Fixed Maturity
+"The Goldman Sachs Group, Inc.",SPS711443140,4039450,38141GYC2,GS 3.21 04/22/2042 FLT USD Corporate,Yes,"51,613.00000","51,613.00000",Senior Unsecured,Bond,"51,978.00000",Fixed Maturity
+The Kroger Co.,SPS402896983,4004136,501044DE8,KR 2.65 10/15/2026 FIX USD Corporate,Yes,"46,218.00000","46,218.00000",Senior Unsecured,Bond,"46,310.00000",Fixed Maturity
+"The Williams Companies, Inc.",SPS14100527,4011165,969457BB5,WMB 7.5 01/15/2031 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"47,863.00000",Fixed Maturity
+"The Williams Companies, Inc.",SPS64480082,4011165,U96906AC3,WMB 01/15/2031 FIX USD Corporate RegS,No,,,Senior Unsecured,Bond,1/15/2031,Fixed Maturity
+"Time Warner Cable Enterprises, LLC",SPS14019547,4071273,88731EAG5,TIMEWA 07/15/2033 FIX USD Corporate,No,,,Senior Secured,Bond,7/15/2033,Fixed Maturity
+"Time Warner Cable Enterprises, LLC",SPS14080100,4071273,88731EAJ9,TIMEWA 8.375 07/15/2033 FIX USD Corporate,No,,,Senior Unsecured,Bond,"48,775.00000",Fixed Maturity
+Time Warner Cable Inc.,SPS115638708,4146010,88732JAY4,TIMWAR 5.875 11/15/2040 FIX USD Corporate,Yes,"51,271.00000","51,271.00000",Senior Unsecured,Bond,"51,455.00000",Fixed Maturity
+Time Warner Cable Inc.,SPS140294740,4146010,88732JBB3,TIMWAR 5.5 09/01/2041 FIX USD Corporate,Yes,"51,561.00000","51,561.00000",Senior Unsecured,Bond,"51,745.00000",Fixed Maturity
+Time Warner Cable Inc.,SPS34405166,4146010,88732JAJ7,TIMWAR 6.55 05/01/2037 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"50,161.00000",Fixed Maturity
+Time Warner Cable Inc.,SPS46045098,4146010,88732JAN8,TIMWAR 7.3 07/01/2038 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"50,587.00000",Fixed Maturity
+Time Warner Cable Inc.,SPS60515940,4146010,88732JAU2,TIMWAR 6.75 06/15/2039 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"50,936.00000",Fixed Maturity
+"Transcontinental Gas Pipe Line Company, LLC",SPS14038463,4057168,893570BM2,TRANGAS 7.25 12/01/2026 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"46,357.00000",Fixed Maturity
+"TriNet Group, Inc.",SPS705128861,4228223,896288AB3,TRINGRO 3.5 03/01/2029 FIX USD Corporate,No,,,Senior Unsecured,Bond,3/1/2029,Fixed Maturity
+Unum Group,SPS14118645,103324,91529YAD8,UNMG 7.375 06/15/2032 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"48,380.00000",Fixed Maturity
+USF&G Capital III,SPS32227124,7381986,90330SAB6,STA-USF+GCap3 8.312 07/01/2046 FIX USD Corporate,No,,,Senior Unsecured,Bond,"53,509.00000",Fixed Maturity
+Valero Energy Corporation,SPS14034325,4011157,252747AF7,VLOC 7.65 07/01/2026 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,204.00000",Fixed Maturity
+Vericast Corp.,SPS1677193773,4158977,U9231NAG3,VERICAC 10/15/2027 FIX USD Corporate RegS,Yes,,8/10/2021,Senior Secured,Bond,10/15/2027,Fixed Maturity
+Vericast Corp.,SPS1677193774,4158977,92342NAH6,VERICAC 10/15/2027 FIX USD Corporate 144A,Yes,,8/10/2021,Senior Secured,Bond,10/15/2027,Fixed Maturity
+Vericast Corp.,SPS1679153392,4158977,U9231NAH1,VERICAC 09/15/2026 FIX USD Corporate RegS,No,,,Senior Secured,Bond,9/15/2026,Fixed Maturity
+Vericast Corp.,SPS1680527714,4158977,U9231NAJ7,VERICAC 09/15/2026 FIX USD Corporate RegS,No,,,Senior Secured,Bond,9/15/2026,Fixed Maturity
+Vericast Corp.,SPS1805148393,4158977,U9231NAK4,VERICAC 12.5 12/15/2027 FIX USD Corporate RegS,Yes,"46,183.00000","44,910.00000",Senior Secured,Bond,"46,736.00000",Fixed Maturity
+Vericast Corp.,SPS1805310512,4158977,92342NAK9,VERICAC 12.5 12/15/2027 FIX USD Corporate 144A,Yes,"46,184.00000","44,910.00000",Senior Secured,Bond,"46,736.00000",Fixed Maturity
+Verizon Communications Inc.,SPS14055470,4057229,362320BA0,GTELLC 6.94 04/15/2028 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,858.00000",Fixed Maturity
+Verizon Communications Inc.,SPS1680021299,4057229,92343VGL2,VRZN 2.85 09/03/2041 FIX USD Corporate,Yes,"51,563.00000","51,563.00000",Senior Unsecured,Bond,"51,747.00000",Fixed Maturity
+Verizon Communications Inc.,SPS1771742262,4057229,92343VGP3,VRZN 3.875 03/01/2052 FIX USD Corporate,Yes,"55,397.00000","55,397.00000",Senior Unsecured,Bond,"55,579.00000",Fixed Maturity
+Verizon Communications Inc.,SPS1772244386,4057229,92343VGQ1,VRZN 4.1 03/04/2055 FIX USD Corporate RegS,Yes,"46,450.00000","46,450.00000",Senior Unsecured,Bond,"56,677.00000",Fixed Maturity
+Verizon Communications Inc.,SPS1891283613,4057229,U9221ACJ5,VRZN 4.78 02/15/2035 FIX USD Corporate,No,,,Senior Unsecured,Bond,2/15/2035,Fixed Maturity
+Verizon Communications Inc.,SPS285219913,4057229,92343VCU6,VRZN 01/15/2036 FIX USD Corporate 144A,Yes,,,Senior Unsecured,Bond,1/15/2036,Fixed Maturity
+Verizon Communications Inc.,SPS430326041,4057229,92346MBY6,VRZN 4.55 02/15/2048 FIX USD Corporate,Yes,"46,203.00000","44,972.00000",Senior Unsecured,Bond,"54,103.00000",Fixed Maturity
+Verizon Communications Inc.,SPS430326183,4057229,92346MGE5,VRZN 3.45 12/15/2049 FIX USD Corporate,Yes,"46,183.00000","44,180.00000",Senior Unsecured,Bond,"54,772.00000",Fixed Maturity
+Verizon Communications Inc.,SPS430326192,4057229,92346MGP0,VRZN 1.85 06/15/2030 FIX USD Corporate,Yes,"46,183.00000","44,362.00000",Senior Unsecured,Bond,"47,649.00000",Fixed Maturity
+Verizon Communications Inc.,SPS430326193,4057229,92346MGQ8,VRZN 2.8 06/15/2050 FIX USD Corporate,Yes,"46,203.00000","44,362.00000",Senior Unsecured,Bond,"54,954.00000",Fixed Maturity
+Verizon Communications Inc.,SPS430326257,4057229,92346MJQ5,VRZN 4.0 05/15/2029 FIX USD Corporate,Yes,6/10/2026,11/15/2022,Senior Unsecured,Bond,5/15/2029,Fixed Maturity
+Verizon Communications Inc.,SPS430326865,4057229,92346MAY7,VRZN 4.85 08/15/2047 FIX USD Corporate,Yes,"46,204.00000","44,788.00000",Senior Unsecured,Bond,"53,919.00000",Fixed Maturity
+Verizon Maryland Inc.,SPS14003417,4057233,165069AM7,VERIZOM 07/01/2026 FIX USD Corporate,No,,,Senior Unsecured,Bond,7/1/2026,Fixed Maturity
+Verizon Maryland Inc.,SPS14003419,4057233,165069AP0,VERIZOM 8.0 10/15/2029 FIX USD Corporate,No,,,Senior Unsecured,Bond,"47,406.00000",Fixed Maturity
+Verizon Maryland Inc.,SPS14139676,4057233,92344WAB7,VERIZOM 5.125 06/15/2033 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"48,745.00000",Fixed Maturity
+Verizon New England Inc.,SPS14014557,4057234,644239AY1,VZ-NewEngland 7.875 11/15/2029 FIX USD Corporate,No,,,Senior Unsecured,Bond,"47,437.00000",Fixed Maturity
+Verizon New Jersey Inc.,SPS14014582,4057235,645767AW4,VZ-NJInc 7.85 11/15/2029 FIX USD Corporate,Yes,,"36,479.00000",Senior Unsecured,Bond,"47,437.00000",Fixed Maturity
+Verizon New Jersey Inc.,SPS14140081,4057235,645767BC7,VZ-NJInc 7.85 11/15/2029 FIX USD Corporate,No,,,Senior Unsecured,Bond,"47,437.00000",Fixed Maturity
+Verizon New York Inc.,SPS14014673,4057236,650094CB9,VZ-NYInc 12/01/2033 FIX USD Corporate,Yes,,12/1/2013,Senior Unsecured,Bond,12/1/2033,Fixed Maturity
+Verizon New York Inc.,SPS14054885,4057236,650094CJ2,VZ-NYInc 6.5 04/15/2028 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,858.00000",Fixed Maturity
+Verizon New York Inc.,SPS14114721,4057236,92344XAB5,VZ-NYInc 7.375 04/01/2032 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"48,305.00000",Fixed Maturity
+Verizon Pennsylvania LLC,SPS14002122,4381427,078167AZ6,VERIZPE 8.35 12/15/2030 FIX USD Corporate,No,,,Senior Unsecured,Bond,"47,832.00000",Fixed Maturity
+Verizon Pennsylvania LLC,SPS14002123,4381427,078167BA0,VERIZPE 8.75 08/15/2031 FIX USD Corporate,No,,,Senior Unsecured,Bond,"48,075.00000",Fixed Maturity
+Verizon Pennsylvania LLC,SPS14063430,4381427,07786DAA4,VERIZPE 6.0 12/01/2028 FIX USD Corporate,No,,,Senior Unsecured,Bond,"47,088.00000",Fixed Maturity
+Verizon Virginia LLC,SPS14003433,4057242,165087AL1,VERIVIR 8.375 10/01/2029 FIX USD Corporate,No,,,Senior Unsecured,Bond,"47,392.00000",Fixed Maturity
+"Viasat, Inc.",SPS606882619,4242781,92552VAM2,VIASINC 5.625 04/15/2027 FIX USD Corporate,Yes,6/30/2026,4/15/2022,Senior Secured,Bond,4/15/2027,Fixed Maturity
+Virginia Electric and Power Company,SPS50031609,4057032,927804FG4,D-VirgEl+Pwr 8.875 11/15/2038 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"50,724.00000",Fixed Maturity
+"Warner Media, LLC",SPS109112605,4120680,887317AH8,WARNMED 6.1 07/15/2040 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"51,332.00000",Fixed Maturity
+"Warner Media, LLC",SPS129184239,4120680,887317AL9,WARNMED 6.25 03/29/2041 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"51,589.00000",Fixed Maturity
+"Warner Media, LLC",SPS141639167,4120680,887317AM7,WARNMED 5.375 10/15/2041 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"51,789.00000",Fixed Maturity
+"Warner Media, LLC",SPS208511565,4120680,887317AP0,WARNMED 4.9 06/15/2042 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"52,032.00000",Fixed Maturity
+"Warner Media, LLC",SPS252866919,4120680,887317AS4,WARNMED 5.35 12/15/2043 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"52,580.00000",Fixed Maturity
+"Warner Media, LLC",SPS264162316,4120680,887317AU9,WARNMED 4.65 06/01/2044 FIX USD Corporate,Yes,"52,566.00000","52,566.00000",Senior Unsecured,Bond,"52,749.00000",Fixed Maturity
+"Warner Media, LLC",SPS30133498,4120680,887317AD7,WARNMED 6.5 11/15/2036 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"49,994.00000",Fixed Maturity
+"Warner Media, LLC",SPS302465050,4120680,887317AX3,WARNMED 4.85 07/15/2045 FIX USD Corporate,Yes,"52,977.00000","52,977.00000",Senior Unsecured,Bond,"53,158.00000",Fixed Maturity
+"Warner Media, LLC",SPS99075343,4120680,887317AE5,WARNMED 6.2 03/15/2040 FIX USD Corporate,Yes,,,Senior Unsecured,Bond,"51,210.00000",Fixed Maturity
+Wells Fargo & Company,SPS426358685,100382,95000U2U6,WFC 3.35 03/02/2033 FLT USD Corporate,Yes,"48,275.00000","48,275.00000",Senior Unsecured,Bond,"48,640.00000",Fixed Maturity
+Wells Fargo & Company,SPS426358692,100382,95000U3B7,WFC 4.897 07/25/2033 FLT USD Corporate,Yes,"48,420.00000","48,420.00000",Senior Unsecured,Bond,"48,785.00000",Fixed Maturity
+Wells Fargo Finance LLC,SPS1941930492,10595608,U95055BW5,WELLFAJL 05/09/2035 FIX USD Corporate,No,,,Senior Unsecured,Bond,5/9/2035,Fixed Maturity
+Wells Fargo Finance LLC,SPS1961203288,10595608,U95055CP9,WELLFAJL 10/09/2035 FIX USD Corporate,No,,,Senior Unsecured,Bond,10/9/2035,Fixed Maturity
+Wells Fargo Finance LLC,SPS1961515461,10595608,U95055CQ7,WELLFAJL 10/09/2032 FLT USD Corporate,No,,,Senior Unsecured,Bond,10/9/2032,Fixed Maturity
+Wells Fargo Finance LLC,SPS1969421741,10595608,U95055CU8,WELLFAJL 11/14/2035 FIX USD Corporate,No,,,Senior Unsecured,Bond,11/14/2035,Fixed Maturity
+Wells Fargo Finance LLC,SPS1991534274,10595608,U95055DK9,WELLFAJL 03/24/2036 FIX USD Corporate,No,,,Senior Unsecured,Bond,3/24/2036,Fixed Maturity
+Weyerhaeuser Company,SPS14034378,4006248,969133AK3,WY 7.85 07/01/2026 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,204.00000",Fixed Maturity
+Weyerhaeuser Company,SPS14034379,4006248,969133AJ6,WY 7.35 07/01/2026 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,204.00000",Fixed Maturity
+Weyerhaeuser Company,SPS14047416,4006248,962166AW4,WY 6.95 10/01/2027 FIX USD Corporate,No,,,Senior Unsecured,Bond,"46,661.00000",Fixed Maturity
+Weyerhaeuser Company,SPS14113627,4006248,962166BF0,WY 03/15/2032 FIX USD Corporate 144A,Yes,,3/12/2002,Senior Unsecured,Bond,3/15/2032,Fixed Maturity
+Weyerhaeuser Company,SPS64347443,4006248,962166BQ6,WY 03/15/2032 FIX USD Corporate,No,,,Senior Unsecured,Bond,3/15/2032,Fixed Maturity
+"Wisconsin Bell, Inc.",SPS14038346,4057247,976585AG4,WISCBEL 12/01/2026 FIX USD Corporate,Yes,,12/1/2006,Senior Unsecured,Bond,12/1/2026,Fixed Maturity
+Yellowstone Energy LP,SPS291371305,4064145,98580LAA3,YELLOW 5.75 12/31/2026 FIX USD Corporate 144A,Yes,,,Senior Secured,Bond,"46,387.00000",Fixed Maturity
+Yorkshire Power Finance Limited,SPS31503304,4279540,G9856LAA0,YORPOW-Fin 7.25 08/04/2028 FIX GBP Corporate RegS,Yes,,,Senior Unsecured,Bond,"46,969.00000",Fixed Maturity

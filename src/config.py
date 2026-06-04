@@ -21,10 +21,16 @@ MIKEY_CSV = DATA_RAW / "mikey.csv"
 FH_2026_CSV = DATA_RAW / "FinancialHighlights_2026.csv"
 FH_5Y_DIR = DATA_RAW / "fundamentals_5y"
 
+# QoQ data directories (SP Capital IQ exports — quarterly granularity)
+SP_DATA_DIR = ROOT / "SP data"
+QOQ_FUND_DIR = SP_DATA_DIR / "qoqfundamentals"
+QOQ_BOND_DIR = SP_DATA_DIR / "qoqbonddata"
+
 # Interim parquet outputs
 BONDS_PARQUET = DATA_INTERIM / "bonds.parquet"
 MIKEY_PARQUET = DATA_INTERIM / "mikey_crosswalk.parquet"
 FUNDAMENTALS_PARQUET = DATA_INTERIM / "fundamentals_panel.parquet"
+QOQ_BOND_PANEL_PARQUET = DATA_INTERIM / "qoq_bond_panel.parquet"
 
 # Processed feature matrices
 FEATURES_SPREADS = DATA_PROCESSED / "feature_matrix_spreads.parquet"

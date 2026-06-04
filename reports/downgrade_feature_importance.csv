@@ -1,18 +1,27 @@
 feature,importance_gain
-ebitda__to__interest_expense_delta_2yr,836.4484954476357
-EBIT / Interest Expense (x),254.47684352099895
-ebitda__to__interest_expense_delta_1yr,162.37159931100905
-total_debt__to__ebitda_delta_2yr,153.56700134277344
-fcf_to_debt,136.5202508419752
-cash_to_debt,89.12107646465302
-Total Debt / EBITDA (x),51.138513304293156
-vol_2yr_ebitda_margin,34.316200256347656
-ebitda_margin_delta_1yr,33.696525156497955
-log_assets,24.063458114862442
-cfo_to_debt,13.15004587173462
-EBITDA / Interest Expense (x),8.792659878730774
-rating_numeric,6.175721108913422
-total_debt__to__ebitda_delta_1yr,0.8243740200996399
-net_debt_to_ebitda,0.0
-Current Ratio (x),0.0
-distance_to_max_leverage,0.0
+debt_to_equity,2754.500443458557
+log_assets,1201.9398427009583
+cash_to_debt,1131.2992178350687
+vol_8q_ebit_margin,979.9530794620514
+vol_8q_net_inc_margin,734.2171621322632
+Total Debt / Total Capital (%),694.313494682312
+Net Income Margin,600.8335344791412
+total_debt_to_assets,448.1558327674866
+distance_to_max_leverage_pct,414.21651220321655
+return_on_assets_delta_4q,312.87058877944946
+total_debt__to__total_capital_delta_8q,291.3814573287964
+total_debt__to__total_capital_delta_1q,266.97118878364563
+Return on Assets,242.4084620475769
+rating_numeric,221.28253030776978
+EBIT Margin,221.12076702713966
+cfo_to_debt,198.9941108226776
+EBIT / Interest Expense (x),182.12734019756317
+total_debt__to__total_capital_delta_4q,138.6845486164093
+net_debt_to_assets,106.45471119880676
+return_on_assets_delta_1q,90.11141908168793
+Current Ratio (x),74.24297857284546
+ebit_margin_delta_4q,50.091299057006836
+fcf_to_debt,32.02362036705017
+ebit__to__interest_expense_delta_1q,26.516090154647827
+ebit_margin_delta_1q,24.75007963180542
+ebit__to__interest_expense_delta_4q,9.714919686317444

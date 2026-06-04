@@ -198,7 +198,7 @@ def write_summary_report(
 ## Model 2 — Downgrade Risk
 
 **Algorithm**: LightGBM classifier + Cox PH ensemble
-**Validation**: Time-forward holdout (train 2021–2023, val 2024, test 2025)
+**Validation**: Time-forward holdout (train 2023Q1–2024Q3, val 2024Q4, test 2025Q1)
 
 | Metric | Test |
 |--------|------|
@@ -208,7 +208,7 @@ def write_summary_report(
 | Recall @ Top Decile | {test_m.get('recall_at_top_decile', 'N/A'):.2f} |
 | Base Rate | {test_m.get('base_rate', 0):.1%} |
 
-*Top features: EBITDA/Interest coverage trajectory (Δ2yr), leverage trajectory (Δ2yr), FCF/Debt.*
+*Top features: debt/equity ratio, issuer size (log assets), cash/debt buffer, 8-quarter EBIT margin volatility, 8-quarter net income volatility.*
 """
     else:
         down_section = "\n## Model 2 — Downgrade Risk\n\n*Not run.*\n"
@@ -222,20 +222,23 @@ def write_summary_report(
     caveats = """
 ## Caveats
 
-1. **Small N**: 168 bond observations, 42 with valid OAS. Spread model R² is not interpretable at this sample size.
-2. **Single-period snapshot**: All bonds observed at one point in time (2026-05-27). Cross-sectional OAS regression has limited power vs. panel data.
-3. **S&P ratings only**: No Moody's/Fitch confirmation. Rating outliers are not validated.
-4. **No recovery modeling**: OAS contains credit spread and some liquidity; not decomposed.
-5. **No liquidity adjustment**: Bid-ask spread is included as a feature but OAS itself isn't liquidity-adjusted.
-6. **No Sharpe ratio reported**: Sharpe requires a paper-portfolio backtest with realistic bid-ask costs. Not done here.
-7. **Downgrade label coverage**: Rating action history covers ~3 years; 2021–2022 labels have lower coverage.
+1. **Single-period snapshot**: All bonds observed at one point in time (2026-05-27). Cross-sectional spread regression has limited power vs. a full panel model.
+2. **S&P ratings only**: No Moody's/Fitch confirmation. Rating outliers are not validated.
+3. **No recovery modeling**: Z-spread/G-spread contains credit spread and some liquidity premium; not decomposed.
+4. **No liquidity adjustment**: Bid-ask spread is included as a feature but spreads themselves are not liquidity-adjusted.
+5. **Downgrade base rate is elevated**: 2025Q1 test set has 28% base rate vs historical ~15%; PR-AUC benefits from denser signal.
+6. **Cox model adds noise**: All Cox hazard ratio p-values > 0.35; the ensemble is effectively LGB-only for downgrade prediction.
+7. **No Sharpe ratio reported**: Requires a paper-portfolio backtest with realistic bid-ask costs; not done here.
 """
+
+    n_bonds = len(oof_df) if not oof_df.empty else "N/A"
+    n_issuers = oof_df["mi_key"].nunique() if not oof_df.empty else "N/A"
 
     report = f"""# Bond ML Phase 2 — Summary Report
 
 **Generated**: {today}
-**Dataset**: 168 bonds, 72 issuers, 6 annual Q1 snapshots (2021–2026)
-**Excluded issuers** (no US-exchange MI Key): Expand Energy Corp., Moog Inc., Six Flags Entertainment Corp.
+**Dataset**: 458 bonds, 168 issuers, 25 quarterly snapshots (2020Q1–2026Q1)
+**New data**: QoQ bond time-series (z-spread, OAS, YTM, price, duration, trade volume — 35-date history per bond)
 
 ---
 
@@ -243,12 +246,13 @@ def write_summary_report(
 
 | Item | Count |
 |------|-------|
-| Bond observations | 168 |
-| Unique issuers | 72 |
-| Issuers with OAS data | {oof_df['mi_key'].nunique() if not oof_df.empty else 'N/A'} |
-| Bonds with valid spread | {len(oof_df) if not oof_df.empty else 'N/A'} (Z/G/A-spread) |
-| Historical periods | 6 (2021Q1–2026Q1) |
-| Downgrade labels (positive) | 62 of 335 issuer-periods (18.5%) |
+| Bond observations | 458 |
+| Unique issuers | 168 |
+| Issuers with valid spread model | {n_issuers} |
+| Bonds with valid spread | {n_bonds} (Z/G/A-spread) |
+| Quarterly fundamental periods | 25 (2020Q1–2026Q1) |
+| Downgrade label periods | 9 quarterly (2023Q1–2025Q1) |
+| Downgrade labels (positive) | 142 of 702 issuer-periods (20.2%) |
 
 ---
 {spread_section}

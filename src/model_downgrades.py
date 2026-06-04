@@ -28,39 +28,64 @@ warnings.filterwarnings("ignore", category=UserWarning)
 # ---------------------------------------------------------------------------
 
 _DOWNGRADE_FEATURES = [
-    # Level features
-    "Total Debt / EBITDA (x)",
-    "net_debt_to_ebitda",
-    "EBITDA / Interest Expense (x)",
+    # Level: leverage
+    "Total Debt / Total Capital (%)",
+    "total_debt_to_assets",
+    "net_debt_to_assets",
+    "debt_to_equity",
+    # Level: coverage & profitability
     "EBIT / Interest Expense (x)",
+    "EBIT Margin",
+    "Return on Assets",
+    "Net Income Margin",
     "fcf_to_debt",
     "cfo_to_debt",
+    # Level: liquidity
     "Current Ratio (x)",
     "cash_to_debt",
     "log_assets",
-    # Trajectory features (alpha for downgrade prediction)
-    "total_debt__to__ebitda_delta_1yr",
-    "total_debt__to__ebitda_delta_2yr",
-    "ebitda__to__interest_expense_delta_1yr",
-    "ebitda__to__interest_expense_delta_2yr",
-    "ebitda_margin_delta_1yr",
-    "vol_2yr_ebitda_margin",
-    "distance_to_max_leverage",
+    # Quarterly trajectory: leverage
+    "total_debt__to__total_capital_delta_1q",
+    "total_debt__to__total_capital_delta_4q",
+    "total_debt__to__total_capital_delta_8q",
+    # Quarterly trajectory: coverage
+    "ebit__to__interest_expense_delta_1q",
+    "ebit__to__interest_expense_delta_4q",
+    # Quarterly trajectory: profitability
+    "ebit_margin_delta_1q",
+    "ebit_margin_delta_4q",
+    "return_on_assets_delta_1q",
+    "return_on_assets_delta_4q",
+    # Volatility & peak proximity
+    "vol_8q_ebit_margin",
+    "vol_8q_net_inc_margin",
+    "distance_to_max_leverage_pct",
     # Rating
     "rating_numeric",
 ]
 
 _DOWNGRADE_MONOTONE = {
-    "Total Debt / EBITDA (x)":            1,
-    "net_debt_to_ebitda":                  1,
-    "EBITDA / Interest Expense (x)":       -1,
-    "fcf_to_debt":                         -1,
-    "Current Ratio (x)":                   -1,
-    "rating_numeric":                      1,
-    "total_debt__to__ebitda_delta_1yr":       1,
-    "total_debt__to__ebitda_delta_2yr":       1,
-    "ebitda__to__interest_expense_delta_1yr": -1,
-    "distance_to_max_leverage":            1,
+    # Leverage → higher downgrade risk
+    "Total Debt / Total Capital (%)":           1,
+    "total_debt_to_assets":                     1,
+    "net_debt_to_assets":                       1,
+    # Coverage / profitability → lower downgrade risk
+    "EBIT / Interest Expense (x)":              -1,
+    "EBIT Margin":                              -1,
+    "Return on Assets":                         -1,
+    "fcf_to_debt":                              -1,
+    "Current Ratio (x)":                        -1,
+    # Deteriorating trajectories → higher risk
+    "total_debt__to__total_capital_delta_1q":   1,
+    "total_debt__to__total_capital_delta_4q":   1,
+    "total_debt__to__total_capital_delta_8q":   1,
+    "ebit__to__interest_expense_delta_1q":      -1,
+    "ebit__to__interest_expense_delta_4q":      -1,
+    "ebit_margin_delta_1q":                     -1,
+    "ebit_margin_delta_4q":                     -1,
+    "return_on_assets_delta_1q":                -1,
+    # Rating
+    "rating_numeric":                           1,
 }
 
 _LGB_CLF_PARAMS = dict(
@@ -75,7 +100,12 @@ _LGB_CLF_PARAMS = dict(
     verbose=-1,
 )
 
-_PERIOD_ORDER = ["2021Q1", "2022Q1", "2023Q1", "2024Q1", "2025Q1"]
+# 9 quarterly periods: 2023Q1–2025Q1 (all within the 3-year rating history window)
+_PERIOD_ORDER = [
+    "2023Q1", "2023Q2", "2023Q3", "2023Q4",
+    "2024Q1", "2024Q2", "2024Q3", "2024Q4",
+    "2025Q1",
+]
 
 
 # ---------------------------------------------------------------------------
@@ -187,6 +217,12 @@ def train_cox(df: pd.DataFrame, feature_cols: list[str]) -> object:
         cox_fit_cols = available_cols + ["duration", "downgrade_next_yr"]
         cox_df = cox_df[cox_fit_cols].dropna()
 
+        n_rows = len(cox_df)
+        n_events = int(cox_df["downgrade_next_yr"].sum())
+        if n_rows < 20 or n_events < 5:
+            print(f"Cox model skipped: only {n_rows} rows / {n_events} events after dropna.")
+            return None
+
         cph = CoxPHFitter(penalizer=0.1)
         cph.fit(
             cox_df,
@@ -194,7 +230,13 @@ def train_cox(df: pd.DataFrame, feature_cols: list[str]) -> object:
             event_col="downgrade_next_yr",
             show_progress=False,
         )
-        print("Cox model fitted.")
+
+        # Detect degenerate fit (all coefficients ~0 → model adds no signal)
+        if (cph.params_.abs() < 1e-6).all():
+            print("Cox model degenerate (all coef≈0); falling back to LGB-only.")
+            return None
+
+        print(f"Cox model fitted ({n_rows} rows, {n_events} events).")
         return cph
     except Exception as e:
         print(f"Cox model failed: {e}")

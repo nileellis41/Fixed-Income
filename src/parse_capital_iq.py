@@ -8,6 +8,8 @@ Three file formats:
 """
 from __future__ import annotations
 
+import csv
+import io
 import re
 import warnings
 from pathlib import Path
@@ -25,11 +27,18 @@ from src.config import (
     FUNDAMENTALS_PARQUET,
     MIKEY_CSV,
     MIKEY_PARQUET,
+    QOQ_BOND_DIR,
+    QOQ_BOND_PANEL_PARQUET,
+    QOQ_FUND_DIR,
 )
 
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
+def _split(line: str) -> list[str]:
+    return next(csv.reader(io.StringIO(line)))
+
 
 _CURRENT_RE = re.compile(r"^\s*current\s*$", re.IGNORECASE)
 _SECTION_LABELS = {
@@ -231,11 +240,6 @@ def _parse_financial_highlights_file(path: Path) -> pd.DataFrame:
     """
     raw_lines = open(path, encoding="utf-8-sig", errors="replace").readlines()
 
-    def _split(line: str) -> list[str]:
-        # Simple CSV split (handles basic quoting)
-        import csv, io
-        return next(csv.reader(io.StringIO(line)))
-
     mi_keys_raw = _split(raw_lines[1])       # row 1
     periods_raw = _split(raw_lines[2])        # row 2
     period_ends_raw = _split(raw_lines[4])    # row 4
@@ -283,24 +287,33 @@ def _parse_financial_highlights_file(path: Path) -> pd.DataFrame:
 def parse_financial_highlights(
     fh_2026: Path = FH_2026_CSV,
     fh_5y_dir: Path = FH_5Y_DIR,
+    qoq_fund_dir: Path = QOQ_FUND_DIR,
 ) -> pd.DataFrame:
     """
     Parse all FinancialHighlights files → single long-format panel.
     Resolves Current/Restated priority: if both exist for a period, prefer Restated.
     Saves to fundamentals_panel.parquet.
+
+    Priority: QoQ quarterly directory (qoqfundamentals/) supersedes legacy sources.
     """
     all_dfs = []
 
-    # 2026 (current quarter)
-    if fh_2026.exists():
-        df_ = _parse_financial_highlights_file(fh_2026)
-        all_dfs.append(df_)
-
-    # 5y historical files
-    if fh_5y_dir.exists():
-        for p in sorted(fh_5y_dir.glob("FinancialHighlights_*.csv")):
+    # Primary: QoQ quarterly files (2020Q1–2026Q1 at full quarterly granularity)
+    if qoq_fund_dir.exists():
+        qoq_files = sorted(qoq_fund_dir.glob("FinancialHighlights_*.csv"))
+        for p in qoq_files:
             df_ = _parse_financial_highlights_file(p)
             all_dfs.append(df_)
+        if all_dfs:
+            print(f"  Loaded {len(qoq_files)} quarterly files from {qoq_fund_dir.name}/")
+
+    # Legacy fallback (only used if QoQ directory is absent)
+    if not all_dfs:
+        if fh_2026.exists():
+            all_dfs.append(_parse_financial_highlights_file(fh_2026))
+        if fh_5y_dir.exists():
+            for p in sorted(fh_5y_dir.glob("FinancialHighlights_*.csv")):
+                all_dfs.append(_parse_financial_highlights_file(p))
 
     if not all_dfs:
         raise FileNotFoundError("No FinancialHighlights files found.")
@@ -332,18 +345,122 @@ def parse_financial_highlights(
 
 
 # ---------------------------------------------------------------------------
-# 3. Entry point
+# 3. QoQ bond time-series data
 # ---------------------------------------------------------------------------
 
-def run_all_parsers() -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Run all parsers in dependency order. Returns (bonds_df, fundamentals_df)."""
+# Metric name assigned to each QoQ bond CSV file
+_QOQ_BOND_FILES: dict[str, str] = {
+    "Z.csv":           "z_spread_mid",
+    "OAS.csv":         "oas_mid",
+    "modified.csv":    "modified_duration",
+    "convexity.csv":   "convexity",
+    "Macaulay.csv":    "macaulay_duration",
+    "midprice.csv":    "mid_price",
+    "yytm.csv":        "ytm_mid",
+    "entitytrade.csv": "entity_trade_vol",
+}
+
+
+def parse_qoq_bond_data(qoq_bond_dir: Path = QOQ_BOND_DIR) -> pd.DataFrame:
+    """
+    Parse all QoQ bond metric CSVs → long-format panel.
+
+    File structure (5 header rows):
+      row 0: SPGTable (skip)
+      row 1: Column names  — cols 0-4 are identifiers, col 5+ repeat the metric
+      row 2: Field codes   (skip)
+      row 3: Sub-category  (skip)
+      row 4: Dates         MM/DD/YYYY for cols 5+
+      row 5+: bond data rows
+
+    Returns long-format DataFrame with columns:
+      instrument_id, cusip, mi_key, issuer_name, date, metric, value
+    """
+    records: list[dict] = []
+
+    for fname, metric_name in _QOQ_BOND_FILES.items():
+        path = qoq_bond_dir / fname
+        if not path.exists():
+            print(f"  Warning: {fname} not found, skipping")
+            continue
+
+        raw_lines = open(path, encoding="utf-8-sig", errors="replace").readlines()
+
+        # Parse date row (row index 4, 0-based)
+        date_row = _split(raw_lines[4])
+        dates: list[pd.Timestamp] = []
+        for d in date_row[5:]:
+            dt = pd.to_datetime(d.strip(), format="%m/%d/%Y", errors="coerce")
+            dates.append(dt)
+
+        # Data rows start at row 5
+        for line in raw_lines[5:]:
+            parts = _split(line)
+            if not parts or not parts[0].strip():
+                continue
+
+            issuer_name  = parts[0].strip() if len(parts) > 0 else ""
+            instrument_id = parts[1].strip() if len(parts) > 1 else ""
+            mi_key       = parts[2].strip() if len(parts) > 2 else ""
+            cusip        = parts[3].strip() if len(parts) > 3 else ""
+
+            if not instrument_id:
+                continue
+
+            for i, dt in enumerate(dates):
+                if pd.isna(dt):
+                    continue
+                col_idx = i + 5
+                raw_val = parts[col_idx].strip() if col_idx < len(parts) else ""
+                val = _to_numeric_clean(pd.Series([raw_val])).iloc[0]
+
+                records.append({
+                    "instrument_id": instrument_id,
+                    "cusip":         cusip,
+                    "mi_key":        mi_key,
+                    "issuer_name":   issuer_name,
+                    "date":          dt,
+                    "metric":        metric_name,
+                    "value":         val,
+                })
+
+    df = pd.DataFrame(records)
+    df["mi_key"] = (
+        pd.to_numeric(df["mi_key"], errors="coerce")
+        .astype("Int64")
+        .astype(str)
+        .replace("<NA>", pd.NA)
+    )
+
+    DATA_INTERIM.mkdir(parents=True, exist_ok=True)
+    df.to_parquet(QOQ_BOND_PANEL_PARQUET, index=False)
+
+    n_bonds   = df["instrument_id"].nunique()
+    n_dates   = df["date"].nunique()
+    n_metrics = df["metric"].nunique()
+    print(
+        f"qoq_bond_panel.parquet: {len(df):,} rows | "
+        f"{n_bonds} bonds | {n_dates} dates | {n_metrics} metrics"
+    )
+    return df
+
+
+# ---------------------------------------------------------------------------
+# 4. Entry point
+# ---------------------------------------------------------------------------
+
+def run_all_parsers() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    """Run all parsers in dependency order. Returns (bonds_df, fundamentals_df, qoq_bond_df)."""
     print("=== Parsing bonddata ===")
     bonds_df = parse_bonddata()
 
-    print("\n=== Parsing FinancialHighlights ===")
+    print("\n=== Parsing FinancialHighlights (QoQ quarterly) ===")
     fund_df = parse_financial_highlights()
 
-    return bonds_df, fund_df
+    print("\n=== Parsing QoQ bond time-series ===")
+    qoq_bond_df = parse_qoq_bond_data()
+
+    return bonds_df, fund_df, qoq_bond_df
 
 
 if __name__ == "__main__":

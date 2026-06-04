@@ -33,15 +33,22 @@ warnings.filterwarnings("ignore", category=UserWarning)
 # ---------------------------------------------------------------------------
 
 _FUNDAMENTAL_FEATURES = [
-    "Total Debt / EBITDA (x)",
-    "net_debt_to_ebitda",
+    # Leverage
+    "Total Debt / Total Capital (%)",
     "total_debt_to_assets",
+    "net_debt_to_assets",
     "debt_to_equity",
-    "EBITDA / Interest Expense (x)",
+    "net_debt_to_ebitda",          # filled from bonddata snapshot via fallback
+    # Coverage & profitability
     "EBIT / Interest Expense (x)",
+    "EBIT Margin",
+    "Net Income Margin",
+    "Return on Assets",
+    "ebit_margin_calc",
     "fcf_to_debt",
     "cfo_to_debt",
-    "EBITDA Margin",
+    "cfo_to_revenue",
+    # Liquidity
     "log_assets",
     "Current Ratio (x)",
     "Quick Ratio (x)",
@@ -59,6 +66,26 @@ _BOND_FEATURES = [
     "convexity",
 ]
 
+# Time-series momentum / volatility features from QoQ bond panel
+_BOND_TS_FEATURES = [
+    "z_spread_mid_chg_1m",
+    "z_spread_mid_chg_3m",
+    "z_spread_mid_chg_12m",
+    "z_spread_mid_vol_6m",
+    "z_spread_mid_vol_12m",
+    "oas_mid_chg_1m",
+    "oas_mid_chg_3m",
+    "oas_mid_chg_12m",
+    "ytm_mid_chg_1m",
+    "ytm_mid_chg_3m",
+    "ytm_mid_chg_12m",
+    "mid_price_chg_1m",
+    "mid_price_chg_3m",
+    "mid_price_vol_6m",
+    "entity_trade_vol_chg_3m",
+    "entity_trade_vol_vol_6m",
+]
+
 _MACRO_FEATURES = [
     "hy_oas",
     "ig_oas",
@@ -70,26 +97,35 @@ _MACRO_FEATURES = [
     "vix_30d_chg",
 ]
 
-ALL_FEATURES = _FUNDAMENTAL_FEATURES + _BOND_FEATURES + _MACRO_FEATURES
+ALL_FEATURES = _FUNDAMENTAL_FEATURES + _BOND_FEATURES + _BOND_TS_FEATURES + _MACRO_FEATURES
 
-# Monotonic constraint direction: +1 = feature↑ → OAS↑, -1 = feature↑ → OAS↓, 0 = unconstrained
+# Monotonic constraint direction: +1 = feature↑ → spread↑, -1 = feature↑ → spread↓, 0 = unconstrained
 _MONOTONE_MAP = {
-    "Total Debt / EBITDA (x)":      1,
-    "net_debt_to_ebitda":            1,
-    "total_debt_to_assets":          1,
-    "debt_to_equity":                1,
-    "EBITDA / Interest Expense (x)": -1,
-    "EBIT / Interest Expense (x)":   -1,
-    "fcf_to_debt":                   -1,
-    "cfo_to_debt":                   -1,
-    "Current Ratio (x)":             -1,
-    "Quick Ratio (x)":               -1,
-    "cash_to_debt":                  -1,
-    "rating_numeric":                1,   # higher numeric = worse rating = wider spread
-    "modified_duration":             1,
-    "hy_oas":                        1,
-    "ig_oas":                        1,
-    "vix":                           1,
+    # Leverage → wider spread
+    "Total Debt / Total Capital (%)": 1,
+    "total_debt_to_assets":           1,
+    "net_debt_to_assets":             1,
+    "debt_to_equity":                 1,
+    "net_debt_to_ebitda":             1,
+    # Coverage / profitability → tighter spread
+    "EBIT / Interest Expense (x)":    -1,
+    "EBIT Margin":                    -1,
+    "Net Income Margin":              -1,
+    "Return on Assets":               -1,
+    "fcf_to_debt":                    -1,
+    "cfo_to_debt":                    -1,
+    # Liquidity → tighter spread
+    "Current Ratio (x)":              -1,
+    "Quick Ratio (x)":                -1,
+    "cash_to_debt":                   -1,
+    # Bond structure → wider spread
+    "rating_numeric":                 1,
+    "modified_duration":              1,
+    # Macro → wider spread
+    "hy_oas":                         1,
+    "ig_oas":                         1,
+    "vix":                            1,
+    # TS momentum — leave unconstrained (mean-reversion vs trend dynamics are ambiguous)
 }
 
 _LGB_PARAMS = dict(

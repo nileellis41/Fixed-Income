@@ -9,6 +9,7 @@ Key invariants (enforced by tests):
 """
 from __future__ import annotations
 
+import calendar
 import re
 from datetime import timedelta
 from typing import Optional
@@ -23,6 +24,7 @@ from src.config import (
     FUNDAMENTALS_PARQUET,
     IG_CUTOFF_NUMERIC,
     MAX_STALENESS_QUARTERS,
+    QOQ_BOND_PANEL_PARQUET,
     RATING_NA_STRINGS,
     SP_RATING_SCALE,
 )
@@ -124,16 +126,32 @@ def _pivot_period_wide(fundamentals_long: pd.DataFrame) -> pd.DataFrame:
     return wide
 
 
-# Period sort order (annual Q1 snapshots)
-_PERIOD_ORDER = ["2021Q1", "2022Q1", "2023Q1", "2024Q1", "2025Q1", "2026Q1"]
+def _gen_period_order(
+    start_year: int = 2020, start_q: int = 1,
+    end_year:   int = 2026, end_q:   int = 1,
+) -> list[str]:
+    """Generate ordered list of quarterly periods, e.g. ['2020Q1', '2020Q2', ...]."""
+    periods: list[str] = []
+    year, q = start_year, start_q
+    while (year, q) <= (end_year, end_q):
+        periods.append(f"{year}Q{q}")
+        q += 1
+        if q > 4:
+            q = 1
+            year += 1
+    return periods
 
 
-def _period_lag(period: str, n_years: int) -> Optional[str]:
-    """Return the period n_years before the given period, or None if out of range."""
+# All quarterly periods 2020Q1 → 2026Q1 (25 periods)
+_PERIOD_ORDER = _gen_period_order()
+
+
+def _period_lag(period: str, n_quarters: int) -> Optional[str]:
+    """Return the period n_quarters before the given period, or None if out of range."""
     if period not in _PERIOD_ORDER:
         return None
     idx = _PERIOD_ORDER.index(period)
-    lag_idx = idx - n_years
+    lag_idx = idx - n_quarters
     return _PERIOD_ORDER[lag_idx] if lag_idx >= 0 else None
 
 
@@ -141,62 +159,86 @@ def compute_trajectories(panel_wide: pd.DataFrame) -> pd.DataFrame:
     """
     Add trajectory features to a panel of (mi_key, period) rows.
 
-    Δ1yr = current - 1-year-ago value
-    Δ2yr = current - 2-year-ago value
-    Δ4yr = current - 4-year-ago value
-    Rolling 2yr std of EBITDA Margin and Revenue Growth
+    Uses EBIT-based metrics aligned with QoQ fundamentals files:
+      - Total Debt / Total Capital (%)  — capital structure leverage
+      - EBIT / Interest Expense (x)     — interest coverage
+      - EBIT Margin                     — operating profitability
+      - Net Income Margin               — bottom-line profitability
+      - Return on Assets                — asset efficiency
+
+    Lags are in quarters (n_quarters):
+      delta_1q  = Δ vs 1 quarter ago  (~3 months)
+      delta_4q  = Δ vs 4 quarters ago (~1 year)
+      delta_8q  = Δ vs 8 quarters ago (~2 years)
+
+    Rolling windows are calibrated to quarterly data:
+      vol_8q   = rolling 8-quarter std  (~2-year volatility)
+      max_16q  = rolling 16-quarter max (~4-year peak leverage)
 
     Returns NaN when prior period is absent — never extrapolates.
     """
     panel = panel_wide.copy().sort_values(["mi_key", "period"])
-
-    # Index by (mi_key, period) for fast lookups
     panel = panel.set_index(["mi_key", "period"])
 
-    def lag_col(col: str, n_years: int, suffix: str) -> pd.Series:
+    def lag_col(col: str, n_quarters: int) -> pd.Series:
         result = {}
-        for (mk, per), row in panel.iterrows():
-            lag_per = _period_lag(per, n_years)
+        for (mk, per) in panel.index:
+            lag_per = _period_lag(per, n_quarters)
             if lag_per and (mk, lag_per) in panel.index:
                 result[(mk, per)] = panel.loc[(mk, lag_per), col]
             else:
                 result[(mk, per)] = np.nan
-        return pd.Series(result, name=f"{col}_{suffix}")
+        return pd.Series(result)
 
-    leverage_col = "Total Debt / EBITDA (x)"
-    coverage_col = "EBITDA / Interest Expense (x)"
-    fcf_margin_col_src = "EBITDA Margin"  # proxy for FCF margin trajectory
+    def _col_clean(col: str) -> str:
+        return (
+            col.split(" (")[0]
+            .lower()
+            .replace(" ", "_")
+            .replace("/", "_to_")
+            .replace(",", "")
+            .replace(".", "")
+            .replace("-", "_")
+        )
 
-    for col, suffix_map in [
-        (leverage_col, {1: "delta_1yr", 2: "delta_2yr", 4: "delta_4yr"}),
-        (coverage_col, {1: "delta_1yr", 2: "delta_2yr"}),
-        (fcf_margin_col_src, {1: "delta_1yr", 2: "delta_2yr"}),
-    ]:
+    # Trajectory features: (metric_column, {n_quarters: suffix_label})
+    _TRAJ_SPECS = [
+        ("Total Debt / Total Capital (%)", {1: "delta_1q", 4: "delta_4q", 8: "delta_8q"}),
+        ("EBIT / Interest Expense (x)",    {1: "delta_1q", 4: "delta_4q"}),
+        ("EBIT Margin",                    {1: "delta_1q", 4: "delta_4q"}),
+        ("Net Income Margin",              {1: "delta_1q", 4: "delta_4q"}),
+        ("Return on Assets",              {1: "delta_1q", 4: "delta_4q"}),
+    ]
+
+    for col, suffix_map in _TRAJ_SPECS:
         if col not in panel.columns:
             continue
-        for n_years, suffix in suffix_map.items():
-            lag_s = lag_col(col, n_years, suffix)
-            col_clean = col.split(" (")[0].lower().replace(" ", "_").replace("/", "_to_").replace(",", "").replace(".", "").replace("-", "_")
-            new_col = f"{col_clean}_{suffix}"
-            panel[new_col] = panel[col] - lag_s
+        for n_q, suffix in suffix_map.items():
+            lag_s = lag_col(col, n_q)
+            panel[f"{_col_clean(col)}_{suffix}"] = panel[col] - lag_s
 
-    # Rolling 2yr std of EBITDA Margin
-    if "EBITDA Margin" in panel.columns:
-        panel["vol_2yr_ebitda_margin"] = (
-            panel["EBITDA Margin"]
-            .groupby(level=0)
-            .transform(lambda s: s.rolling(2, min_periods=2).std())
-        )
+    # Rolling 8-quarter (~2yr) volatility of margin metrics
+    for margin_col, out_col in [
+        ("EBIT Margin",       "vol_8q_ebit_margin"),
+        ("Net Income Margin", "vol_8q_net_inc_margin"),
+    ]:
+        if margin_col in panel.columns:
+            panel[out_col] = (
+                panel[margin_col]
+                .groupby(level=0)
+                .transform(lambda s: s.rolling(8, min_periods=4).std())
+            )
 
-    # Distance to issuer's own 4yr max leverage
-    if leverage_col in panel.columns:
-        panel["issuer_4yr_max_leverage"] = (
-            panel[leverage_col]
+    # Distance to issuer's own 16-quarter (~4yr) max leverage
+    lev_col = "Total Debt / Total Capital (%)"
+    if lev_col in panel.columns:
+        panel["issuer_16q_max_leverage_pct"] = (
+            panel[lev_col]
             .groupby(level=0)
-            .transform(lambda s: s.rolling(4, min_periods=1).max())
+            .transform(lambda s: s.rolling(16, min_periods=4).max())
         )
-        panel["distance_to_max_leverage"] = (
-            panel[leverage_col] - panel["issuer_4yr_max_leverage"]
+        panel["distance_to_max_leverage_pct"] = (
+            panel[lev_col] - panel["issuer_16q_max_leverage_pct"]
         )
 
     return panel.reset_index()
@@ -220,13 +262,17 @@ def compute_ratios(df: pd.DataFrame) -> pd.DataFrame:
             den.isna() | (den == 0), np.nan, num / den
         )
 
-    safe_div("Net Debt", "EBITDA", "net_debt_to_ebitda")
-    safe_div("Total Debt", "Total Assets", "total_debt_to_assets")
-    safe_div("Total Debt", "Total Common Equity", "debt_to_equity")
-    safe_div("Levered Free Cash Flow", "Total Debt", "fcf_to_debt")
-    safe_div("Cash from Ops.", "Total Debt", "cfo_to_debt")
-    safe_div("EBITDA", "Total Revenue", "ebitda_margin_calc")
-    safe_div("Unlevered Free Cash Flow", "Total Revenue", "fcf_margin")
+    safe_div("Net Debt",                   "EBITDA",        "net_debt_to_ebitda")
+    safe_div("Total Debt",                 "Total Assets",  "total_debt_to_assets")
+    safe_div("Net Debt",                   "Total Assets",  "net_debt_to_assets")
+    safe_div("Total Debt",                 "Total Common Equity", "debt_to_equity")
+    safe_div("Levered Free Cash Flow",     "Total Debt",    "fcf_to_debt")
+    safe_div("Cash from Ops.",             "Total Debt",    "cfo_to_debt")
+    safe_div("EBITDA",                     "Total Revenue", "ebitda_margin_calc")
+    safe_div("EBIT",                       "Total Revenue", "ebit_margin_calc")
+    safe_div("Net Income",                 "Total Revenue", "net_income_margin_calc")
+    safe_div("Cash from Ops.",             "Total Revenue", "cfo_to_revenue")
+    safe_div("Unlevered Free Cash Flow",   "Total Revenue", "fcf_margin")
     safe_div("Cash & Short-term Investments", "Total Debt", "cash_to_debt")
 
     # log transforms
@@ -314,13 +360,25 @@ def build_downgrade_labels(bonds_df: pd.DataFrame) -> pd.DataFrame:
             if _NEGATIVE_ACTIONS.search(action):
                 issuer_events.setdefault(mi_key, []).append(date)
 
+    # Use all quarterly periods whose 1-year forward window falls within the
+    # ~3-year rating history available in bonddata (covers ~May 2023 to May 2026).
+    # Eligible: period_end + 1yr ≤ 2026-05-27  →  2023Q1 through 2025Q1 (9 quarters).
+    _HISTORY_CUTOFF = pd.Timestamp("2026-05-27")
+
+    def _quarter_end(year: int, q: int) -> pd.Timestamp:
+        month = q * 3
+        day = calendar.monthrange(year, month)[1]
+        return pd.Timestamp(year, month, day)
+
+    eligible_periods = []
+    for p in _gen_period_order(2023, 1, 2026, 1):
+        yr, qn = int(p[:4]), int(p[5])
+        pe = _quarter_end(yr, qn)
+        if pe + pd.DateOffset(years=1) <= _HISTORY_CUTOFF:
+            eligible_periods.append((p, pe))
+
     records = []
-    for period, period_end_str in [
-        ("2021Q1", "2021-03-31"), ("2022Q1", "2022-03-31"),
-        ("2023Q1", "2023-03-31"), ("2024Q1", "2024-03-31"),
-        ("2025Q1", "2025-03-31"),
-    ]:
-        pe = pd.Timestamp(period_end_str)
+    for period, pe in eligible_periods:
         window_start = pe
         window_end = pe + pd.DateOffset(years=1)
 
@@ -363,7 +421,132 @@ def apply_staleness_filter(
 
 
 # ---------------------------------------------------------------------------
-# 7. Build feature matrices
+# 7. QoQ bond time-series features
+# ---------------------------------------------------------------------------
+
+# Metric columns where 0 means pre-issuance / missing data (not a real 0)
+_ZERO_MASK_METRICS = frozenset({
+    "z_spread_mid", "oas_mid", "ytm_mid",
+    "mid_price", "modified_duration", "convexity", "macaulay_duration",
+})
+
+
+def compute_bond_ts_features(
+    qoq_bond_panel: pd.DataFrame,
+    as_of_date: pd.Timestamp,
+) -> pd.DataFrame:
+    """
+    Compute per-bond time-series features from the QoQ bond metrics panel.
+
+    Features computed per bond:
+      *_ts_cur      — most recent value ≤ as_of_date
+      *_chg_1m      — change vs ~30 days ago
+      *_chg_3m      — change vs ~90 days ago
+      *_chg_12m     — change vs ~365 days ago
+      *_vol_6m      — rolling std over last 180 days
+      *_vol_12m     — rolling std over last 365 days (z-spread only)
+
+    Returns wide DataFrame keyed by instrument_id.
+    """
+    panel = qoq_bond_panel.copy()
+    panel = panel[panel["value"].notna() & (panel["date"] <= as_of_date)]
+
+    # Treat 0 as pre-issuance/missing for financial metrics
+    mask_zero = panel["metric"].isin(_ZERO_MASK_METRICS) & (panel["value"] == 0)
+    panel.loc[mask_zero, "value"] = np.nan
+
+    wide = (
+        panel
+        .pivot_table(
+            index=["instrument_id", "cusip", "mi_key", "date"],
+            columns="metric",
+            values="value",
+            aggfunc="last",
+        )
+        .reset_index()
+    )
+    wide.columns.name = None
+    wide = wide.sort_values(["instrument_id", "date"]).reset_index(drop=True)
+
+    # Feature spec: (metric, [(suffix, days, is_volatility)])
+    _FEAT_CFG = [
+        ("z_spread_mid",      [
+            ("chg_1m",  30,  False), ("chg_3m",  90,  False),
+            ("chg_12m", 365, False), ("vol_6m",  180, True),
+            ("vol_12m", 365, True),
+        ]),
+        ("oas_mid",           [
+            ("chg_1m",  30,  False), ("chg_3m",  90,  False),
+            ("chg_12m", 365, False),
+        ]),
+        ("ytm_mid",           [
+            ("chg_1m",  30,  False), ("chg_3m",  90,  False),
+            ("chg_12m", 365, False),
+        ]),
+        ("mid_price",         [
+            ("chg_1m",  30,  False), ("chg_3m",  90,  False),
+            ("vol_6m",  180, True),
+        ]),
+        ("modified_duration", [("chg_12m", 365, False)]),
+        ("entity_trade_vol",  [("chg_3m",  90,  False), ("vol_6m", 180, True)]),
+    ]
+
+    all_rows: list[dict] = []
+
+    for inst_id, grp in wide.groupby("instrument_id", sort=False):
+        grp = grp.set_index("date").sort_index()
+        eligible = grp[grp.index <= as_of_date]
+        if eligible.empty:
+            continue
+
+        latest_date = eligible.index[-1]
+        latest = eligible.loc[latest_date]
+
+        def _closest(col: str, ref_date: pd.Timestamp, tol_days: int = 20) -> float:
+            if col not in eligible.columns:
+                return np.nan
+            s = eligible[col].dropna()
+            if s.empty:
+                return np.nan
+            diffs = np.abs((s.index - ref_date).days)
+            best = int(diffs.argmin())
+            return float(s.iloc[best]) if diffs[best] <= tol_days else np.nan
+
+        def _mom(col: str, days: int) -> float:
+            cur = _closest(col, latest_date, tol_days=5)
+            ref = _closest(col, latest_date - pd.Timedelta(days=days))
+            return cur - ref if not (np.isnan(cur) or np.isnan(ref)) else np.nan
+
+        def _vol(col: str, days: int) -> float:
+            if col not in eligible.columns:
+                return np.nan
+            cutoff = latest_date - pd.Timedelta(days=days)
+            s = eligible[col].dropna()
+            s = s[s.index >= cutoff]
+            return float(s.std()) if len(s) >= 3 else np.nan
+
+        row: dict = {
+            "instrument_id": inst_id,
+            "cusip":         str(latest.get("cusip", "")),
+            "mi_key":        str(latest.get("mi_key", "")),
+        }
+
+        for metric, specs in _FEAT_CFG:
+            if metric not in eligible.columns:
+                continue
+            row[f"{metric}_ts_cur"] = _closest(metric, latest_date, tol_days=5)
+            for suffix, days, is_vol in specs:
+                row[f"{metric}_{suffix}"] = (
+                    _vol(metric, days) if is_vol else _mom(metric, days)
+                )
+
+        all_rows.append(row)
+
+    return pd.DataFrame(all_rows)
+
+
+# ---------------------------------------------------------------------------
+# 8. Build feature matrices
 # ---------------------------------------------------------------------------
 
 def build_feature_matrix_spreads(
@@ -395,8 +578,40 @@ def build_feature_matrix_spreads(
     # PIT join fundamentals
     bonds = pit_join_fundamentals(bonds, fundamentals_long)
 
+    # Back-fill QoQ panel gaps with bonddata embedded snapshot values
+    _BD_FALLBACKS = {
+        "EBITDA":            "ebitda_cur",
+        "Total Debt":        "total_debt_cur",
+        "Net Debt":          "net_debt_cur",
+        "Total Assets":      "total_assets_cur",
+        "Cash from Ops.":    "cfo_cur",
+        "Levered Free Cash Flow":   "levered_fcf_cur",
+        "Unlevered Free Cash Flow": "unlevered_fcf_cur",
+        "EBIT / Interest Expense (x)": "ebitda_interest_cov_cur",
+        "Current Ratio (x)": "current_ratio_cur",
+    }
+    for fh_col, bd_col in _BD_FALLBACKS.items():
+        if bd_col not in bonds.columns:
+            continue
+        if fh_col not in bonds.columns:
+            bonds[fh_col] = bonds[bd_col]
+        else:
+            bonds[fh_col] = bonds[fh_col].where(bonds[fh_col].notna(), bonds[bd_col])
+
     # Derived ratios
     bonds = compute_ratios(bonds)
+
+    # Join QoQ bond time-series features if the panel parquet exists
+    as_of = pd.Timestamp(bonds["as_of_date"].iloc[0])
+    if QOQ_BOND_PANEL_PARQUET.exists():
+        qoq_panel = pd.read_parquet(QOQ_BOND_PANEL_PARQUET)
+        ts_feats = compute_bond_ts_features(qoq_panel, as_of)
+        # Drop redundant identifier columns before merging
+        ts_feats = ts_feats.drop(columns=["cusip", "mi_key"], errors="ignore")
+        bonds = bonds.merge(ts_feats, on="instrument_id", how="left")
+        n_joined = ts_feats["instrument_id"].notna().sum()
+        n_ts_cols = len(ts_feats.columns) - 1  # exclude instrument_id
+        print(f"  Joined {n_ts_cols} bond TS features for {n_joined} bonds")
 
     # OAS sanity filter is applied in model_spreads, not here
 
