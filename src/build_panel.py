@@ -33,6 +33,7 @@ import pandas as pd
 from src.config import (
     DATA_INTERIM,
     MIKEY_CSV,
+    MIKEYS_SP_CSV,
     QOQ_BOND_DIR,
     QOQ_FUND_DIR,
     REPORTS,
@@ -382,9 +383,25 @@ def build_bond_panel(qoq_bond_dir: Path = QOQ_BOND_DIR) -> tuple[pd.DataFrame, d
     log["duplicate_cusip_count"] = len(dup_cusips)
     log["duplicate_cusip_list"]  = sorted(dup_cusips)
 
-    # bond_active: True if any numeric metric is non-NaN on this date
-    numeric_metrics = [c for c in _BOND_METRIC_FILES.values() if c in wide.columns]
-    wide["bond_active"] = wide[numeric_metrics].notna().any(axis=1)
+    # bond_active: True only if the bond has a valid spread on this date.
+    # trade volume is always populated so cannot be used here.
+    _SPREAD_COLS = ["z_spread_mid", "oas_mid", "ytm_mid"]
+    spread_cols_present = [c for c in _SPREAD_COLS if c in wide.columns]
+    wide["bond_active"] = wide[spread_cols_present].notna().any(axis=1)
+
+    # yield_for_irr: YTW where callable and available, else YTM; flag the source
+    if "ytw_mid" in wide.columns and "ytm_mid" in wide.columns:
+        callable_yes = wide.get("callable", pd.Series(dtype=str)).str.upper() == "YES"
+        ytw_available = wide["ytw_mid"].notna()
+        wide["yield_for_irr"] = wide["ytm_mid"].copy()                     # default: YTM
+        wide["yield_source"]  = "YTM"
+        # Callable + YTW present → use YTW
+        wide.loc[callable_yes & ytw_available, "yield_for_irr"] = wide.loc[
+            callable_yes & ytw_available, "ytw_mid"
+        ]
+        wide.loc[callable_yes & ytw_available, "yield_source"] = "YTW"
+        # Callable + YTW missing → YTM fallback, flag it
+        wide.loc[callable_yes & ~ytw_available, "yield_source"] = "YTM_fallback"
 
     # Null rates per metric column
     metric_cols = [c for c in _BOND_METRIC_FILES.values() if c in wide.columns]
@@ -453,35 +470,71 @@ def parse_tld_long(tld_path: Path) -> pd.DataFrame:
 # 6. Build Ticker → MI KEY crosswalk from mikey.csv
 # ---------------------------------------------------------------------------
 
-def build_ticker_mikey_map(mikey_csv_path: Path = MIKEY_CSV) -> dict[str, str]:
-    """
-    Read mikey.csv → {ticker: mi_key}.
+_EXCHANGE_SUFFIX_RE  = re.compile(r"\s*\([A-Z]{1,10}:[^)]+\)\s*$")
+_LEGAL_SUFFIX_RE     = re.compile(
+    r"\b(Inc\.?|LLC\.?|Corp\.?|Corporation|Company|Limited|LP|L\.P\.|"
+    r"L\.L\.C\.|PLC|plc|N\.A\.)\b", re.I
+)
 
-    When one ticker maps to multiple MI KEYs (e.g. dual-listed companies),
-    prefer the US-listed entity (NYSE / NASDAQ in entity name).
-    Returns unjoinable tickers (those with no MI KEY) separately.
+
+def _norm_name(s: str) -> str:
+    """Normalise an entity name for fuzzy matching (strip exchange tag + legal suffixes)."""
+    s = _EXCHANGE_SUFFIX_RE.sub("", str(s).strip())
+    s = _LEGAL_SUFFIX_RE.sub("", s)
+    s = re.sub(r"[^\w\s]", " ", s)
+    return " ".join(s.lower().split())
+
+
+def build_ticker_mikey_map(
+    mikeys_sp_csv: Path = MIKEYS_SP_CSV,
+) -> tuple[dict[str, str], dict[str, str]]:
+    """
+    Read SP data/MIkeys.csv → two lookup dicts:
+      ticker_map  — {ticker: mi_key}        exact ticker match
+      entity_map  — {norm_entity: mi_key}   fallback entity-name match
+
+    File has a 4-row header:
+      row 0: SPGTable
+      row 1: Issuer Name / MI KEY
+      row 2: SPT_ field identifiers
+      row 3: actual column headers (Ticker, Entity Name, …, MI KEY)
+    Data starts at row 4.
     """
     raw = pd.read_csv(
-        mikey_csv_path,
-        skiprows=3,
-        header=0,
-        encoding="utf-8-sig",
-        usecols=[0, 1, 3],
-        names=["ticker", "entity_name", "mi_key"],
+        mikeys_sp_csv,
+        skiprows=4,
+        header=None,
+        names=["ticker", "entity_name", "last_time",
+               "industry_class", "sector", "industry", "mi_key"],
         dtype=str,
+        encoding="utf-8-sig",
     )
-    raw = raw.dropna(subset=["ticker", "mi_key"])
-    raw["ticker"]      = raw["ticker"].str.strip()
-    raw["entity_name"] = raw["entity_name"].str.strip()
 
-    # Prefer US-exchange-listed entities
+    raw["ticker"]      = raw["ticker"].fillna("").str.strip()
+    raw["entity_name"] = raw["entity_name"].fillna("").str.strip()
+    raw["mi_key"]      = raw["mi_key"].fillna("").str.strip()
+
+    # Drop footer / disclaimer rows (mi_key must be a pure integer string)
+    raw = raw[raw["mi_key"].str.match(r"^\d+$", na=False)].copy()
+
+    # Ticker map: exact match, prefer US-listed when ticker is ambiguous
     raw["is_us"] = raw["entity_name"].str.contains(
         r"\(NYSE|\(NASDAQ", regex=True, na=False
     )
     raw = raw.sort_values(["ticker", "is_us"], ascending=[True, False])
-    raw = raw.drop_duplicates("ticker", keep="first")
 
-    return dict(zip(raw["ticker"], raw["mi_key"]))
+    valid = raw[raw["ticker"].str.len() >= 1]
+    ticker_map = dict(
+        zip(valid.drop_duplicates("ticker", keep="first")["ticker"],
+            valid.drop_duplicates("ticker", keep="first")["mi_key"])
+    )
+
+    # Entity-name fallback map
+    raw["norm_name"] = raw["entity_name"].apply(_norm_name)
+    ent = raw[raw["norm_name"].str.len() > 2].drop_duplicates("norm_name", keep="first")
+    entity_map = dict(zip(ent["norm_name"], ent["mi_key"]))
+
+    return ticker_map, entity_map
 
 
 # ---------------------------------------------------------------------------
@@ -491,7 +544,7 @@ def build_ticker_mikey_map(mikey_csv_path: Path = MIKEY_CSV) -> dict[str, str]:
 def build_issuer_panel(
     qoq_fund_dir: Path = QOQ_FUND_DIR,
     tld_path: Optional[Path] = None,
-    mikey_csv_path: Path = MIKEY_CSV,
+    mikey_csv_path: Path = MIKEYS_SP_CSV,
 ) -> tuple[pd.DataFrame, dict]:
     """
     Build issuer_panel (mi_key × period) from fundamentals + TLD sentiment.
@@ -547,16 +600,40 @@ def build_issuer_panel(
     if tld_path.exists():
         print("  Parsing TLD sentiment…")
         tld = parse_tld_long(tld_path)
-        ticker_map = build_ticker_mikey_map(mikey_csv_path)
+        ticker_map, entity_map = build_ticker_mikey_map(mikey_csv_path)
+
+        # Stage 1: exact ticker match
         tld["mi_key"] = tld["ticker"].map(ticker_map)
 
-        unjoinable = tld[tld["mi_key"].isna()]["ticker"].dropna().unique().tolist()
-        unjoinable_tickers = sorted(set(unjoinable))
-        log["tld_total_tickers"]      = tld["ticker"].nunique()
-        log["tld_joined_tickers"]     = tld["mi_key"].notna().sum() // max(tld["period"].nunique(), 1)
-        log["tld_unjoinable_tickers"] = unjoinable_tickers
+        # Stage 2: entity-name fallback for rows that didn't match by ticker
+        if "entity_name" in tld.columns:
+            unmatched = tld["mi_key"].isna()
+            tld.loc[unmatched, "mi_key"] = (
+                tld.loc[unmatched, "entity_name"]
+                .apply(_norm_name)
+                .map(entity_map)
+            )
 
-        # Keep one TLD score per (mi_key, period) — mean if duplicates
+        matched_by_ticker = tld["ticker"].map(ticker_map).notna().sum()
+        matched_total     = tld["mi_key"].notna().sum()
+        matched_by_entity = matched_total - matched_by_ticker
+
+        unjoinable = (
+            tld[tld["mi_key"].isna()]["ticker"].dropna().unique().tolist()
+        )
+        unjoinable_tickers = sorted(set(unjoinable))
+
+        log["tld_total_tickers"]       = tld["ticker"].nunique()
+        log["tld_joined_tickers"]      = matched_total // max(tld["period"].nunique(), 1)
+        log["tld_matched_by_ticker"]   = matched_by_ticker // max(tld["period"].nunique(), 1)
+        log["tld_matched_by_entity"]   = matched_by_entity // max(tld["period"].nunique(), 1)
+        log["tld_unjoinable_tickers"]  = unjoinable_tickers
+        print(
+            f"    TLD: {log['tld_joined_tickers']} issuers matched "
+            f"({log['tld_matched_by_ticker']} by ticker, "
+            f"{log['tld_matched_by_entity']} by entity name)"
+        )
+
         tld_join = (
             tld[tld["mi_key"].notna()]
             .groupby(["mi_key", "period"])["tld_score"]
@@ -564,8 +641,8 @@ def build_issuer_panel(
             .reset_index()
         )
         wide = wide.merge(tld_join, on=["mi_key", "period"], how="left")
-        log["issuer_with_tld_pct"] = (
-            round(wide["tld_score"].notna().sum() / len(wide) * 100, 1)
+        log["issuer_with_tld_pct"] = round(
+            wide["tld_score"].notna().sum() / len(wide) * 100, 1
         )
     else:
         warnings.warn("tld.csv not found — tld_score column will be absent")
@@ -701,7 +778,9 @@ def write_coverage_report(
 | Unique issuers (MI KEY) | {issuer_log['issuer_count']:,} |
 | Unique periods | {issuer_log['period_count']} |
 | Period range | {issuer_log['period_range'][0]} → {issuer_log['period_range'][1]} |
-| TLD tickers matched | {issuer_log.get('tld_joined_tickers', 'N/A')} |
+| TLD issuers matched (total) | {issuer_log.get('tld_joined_tickers', 'N/A')} |
+| — matched by ticker | {issuer_log.get('tld_matched_by_ticker', 'N/A')} |
+| — matched by entity name | {issuer_log.get('tld_matched_by_entity', 'N/A')} |
 | Issuer-periods with TLD score | {issuer_log.get('issuer_with_tld_pct', 0):.1f}% |
 
 ### Fundamental metric null rates (key credit metrics)
